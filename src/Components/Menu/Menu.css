@@ -1,0 +1,40 @@
+.Menu{
+    background-color: black;
+    width: 25%;
+    height: 100%;
+    position: absolute;
+    color: #CFB53C;
+    text-align: center;
+    max-width: 100%;
+    font-family: 'Lato', sans-serif;
+    font-weight: bold;
+}
+p{
+    font-weight: normal;
+}
+img{
+    margin: 10%;
+    max-width: 100%;
+}
+navigator{
+    margin: 10%;
+    overflow: auto;
+    display: flex;
+    flex-direction: column;
+    height: 30%;
+    justify-content: space-around;
+    
+    
+    
+}
+navigator div{
+    
+    font-size: 36px;
+}
+footer{
+    margin-top: 80%;
+}
+.phone,
+.instagram{
+
+}
