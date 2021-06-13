@@ -1,0 +1,3 @@
+git status - kontrola stavu
+git add xxx - stagování (příprava na přidání do nové verze)
+git commit -m "komentář" - přidání do nové verze
