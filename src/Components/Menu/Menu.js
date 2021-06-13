@@ -1,9 +1,8 @@
 import React from 'react'
-import MainContent from '../MainContent/MainContent';
-import Menu from './Menu';
+
 
 //component
-class App extends React.Component {
+class Menu extends React.Component {
     render() {
       return (
         <div>
@@ -15,4 +14,5 @@ class App extends React.Component {
     }
   }
 
-export default Menu
+  
+export default Menu;
