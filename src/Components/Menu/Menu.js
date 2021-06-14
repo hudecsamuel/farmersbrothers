@@ -6,25 +6,18 @@ class Menu extends React.Component {
   render() {
     return (
       <div className="Menu">
-        <div style={{
-          margin: '10% auto',
-          height: '17.5%',
-          backgroundImage: `url('../../../Assets/BIG_LOGO.png')`,
-          backgroundRepeat: 'no-repeat',
-          backgroundSize: 'contain',
-          backgroundPosition: 'center'
-        }}>
-        </div>
+        <div className="Big-logo"></div>
         <p>→ shit happens ←</p>
-        <navigator>
-          <div className="domů">DOMŮ</div>
-          <div className="ceník">CENÍK</div>
-          <div className="galerie">GALERIE</div>
-          <div className="kontakt">KONTAKT</div>
-        </navigator>
+        <nav> {/* Jak jsem říkal, 'navigator' tag neexistuje, psalo to chybu v browseru :D (je to 'nav') */}
+          <div className="Home-button">DOMŮ</div>
+          <div className="Price-button">CENÍK</div>
+          <div className="Gallery-button">GALERIE</div>
+          <div className="Contact-button">KONTAKT</div>
+        </nav>
         <footer>
           <div className="instagram">
-            <img src="C:\Users\simon\Desktop\TransparentLogo"></img>
+            <img src="" alt=''></img> 
+            {/* Dávej sem ↑ pls relativní cesty a obrázky do složky Assets... C:\Users\simon\Desktop\TransparentLogo nevidím, protože ho máš ve svým kompu... */}
             <p>farmersbrothers</p>
           </div>
           <div className="phone">

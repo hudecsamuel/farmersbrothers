@@ -1,41 +1,56 @@
-.Menu{
+/*
+Udělej to pls jako grid, to bude nejpřesnější ;) - jinak písmo jsem dal relativní, aby se nezoomovalo a zoomovací bych udělal jen obsah
+*/
+
+.Menu {
     background-color: black;
     width: 25%;
     height: 100%;
-    position: absolute;
-    color: #CFB53C;
+    position: fixed; /* Toto jsem dal fixed, aby pod tím nevznikal bílej scrollovací prostor */
+    top: 0;
+    left: 0;
+    color: #cfb53c;
     text-align: center;
-    max-width: 100%;
-    font-family: 'Lato', sans-serif;
+    font-family: "Lato", sans-serif;
     font-weight: bold;
 }
-p{
-    font-weight: normal;
-    font-size: 20px;
+
+.Big-logo {
+    margin: 10% auto;
+    height: 17.5%;
+    background-image: url('../../Assets/BIG_LOGO.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
 }
-img{
+
+p {
+    font-weight: normal;
+    font-size: 2vh;
+}
+
+img {
     margin: 10%;
     max-width: 100%;
 }
-navigator{
+
+nav {
     margin: 10%;
     overflow: auto;
     display: flex;
     flex-direction: column;
     height: 30%;
     justify-content: space-around;
-    
-    
-    
 }
-navigator div{
-    
-    font-size: 36px;
+
+nav div {
+    font-size: 4.5vh;
 }
-footer{
+
+footer {
     margin-top: 80%;
 }
-.phone,
-.instagram{
 
+.phone,
+.instagram {
 }
