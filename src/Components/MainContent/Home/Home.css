@@ -1,0 +1,8 @@
+.BG-image {
+    width: 110%;
+    height: 110%;
+    background-image: url('../../../Assets/Gallery/field_truck.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
