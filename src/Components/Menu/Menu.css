@@ -27,6 +27,10 @@ Udělej to pls jako grid, to bude nejpřesnější ;) - jinak písmo jsem dal re
 p {
     font-weight: normal;
     font-size: 2vh;
+    opacity: 80%;
+}
+span{
+    color: white;
 }
 
 img {
