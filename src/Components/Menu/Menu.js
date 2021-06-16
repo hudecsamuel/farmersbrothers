@@ -16,10 +16,12 @@ class Menu extends React.Component {
         </nav>
         <footer>
           <div className="instagram">
-            <img src="" alt=''></img> 
+          <div className="insta"></div>
             {/* Dávej sem ↑ pls relativní cesty a obrázky do složky Assets... C:\Users\simon\Desktop\TransparentLogo nevidím, protože ho máš ve svým kompu... */}
-            <p>farmersbrothers</p>
+            <p>@farmersbrothers</p>
+            
           </div>
+          <div className="pho"></div>
           <div className="phone">
             <p>+420 777 777 777</p>
           </div>

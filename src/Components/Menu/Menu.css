@@ -4,8 +4,7 @@ Udělej to pls jako grid, to bude nejpřesnější ;) - jinak písmo jsem dal re
 
 .Menu {
     background-color: black;
-    min-width: 20%;
-    width: 30em;
+    width: 50vh;
     height: 100%;
     position: fixed; /* Toto jsem dal fixed, aby pod tím nevznikal bílej scrollovací prostor */
     top: 0;
@@ -13,7 +12,7 @@ Udělej to pls jako grid, to bude nejpřesnější ;) - jinak písmo jsem dal re
     color: #cfb53c;
     text-align: center;
     font-family: "Lato", sans-serif;
-    font-weight: bold;
+
 }
 
 .Big-logo {
@@ -27,8 +26,7 @@ Udělej to pls jako grid, to bude nejpřesnější ;) - jinak písmo jsem dal re
 
 p {
     font-weight: normal;
-    font-size: 2vh;
-    opacity: 80%;
+    font-size: 1.8vh;
 }
 span{
     color: white;
@@ -40,25 +38,36 @@ img {
 }
 
 nav {
-    margin: 10%;
+    margin: 20% 10% 10% 10%;
     overflow: auto;
     display: flex;
     flex-direction: column;
     height: 30%;
     justify-content: space-around;
-    min-width: 100px;
 }
 
 nav div {
-    font-size: 4.5vh;
+    font-size: 3.5vh;
 }
 
 footer {
-    margin: 20%;
-    
+    margin: 30% 10% 5% 10%;
+}
+footer p {
+
+    font-size: 2.5vh;
+}
+.insta{
+    background:url(../../Assets/Instagram.png);
+    height: 21px;
+    width: 21px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: center;
+    float: left;
 }
 
 .phone,
 .instagram {
-    padding: 10%;
+    padding: 5%;
 }
