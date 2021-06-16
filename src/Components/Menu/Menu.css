@@ -4,7 +4,7 @@ Udělej to pls jako grid, to bude nejpřesnější ;) - jinak písmo jsem dal re
 
 .Menu {
     background-color: black;
-    width: 25%;
+    width: 30em;
     height: 100%;
     position: fixed; /* Toto jsem dal fixed, aby pod tím nevznikal bílej scrollovací prostor */
     top: 0;
@@ -45,6 +45,7 @@ nav {
     flex-direction: column;
     height: 30%;
     justify-content: space-around;
+    min-width: 100px;
 }
 
 nav div {
@@ -52,9 +53,11 @@ nav div {
 }
 
 footer {
-    margin-top: 80%;
+    margin: 20%;
+    
 }
 
 .phone,
 .instagram {
+    padding: 10%;
 }
