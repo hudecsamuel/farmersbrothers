@@ -4,12 +4,21 @@ import Contact from './Contact/Contact'
 import './MainContent.css';
 
 class MainContent extends React.Component {
+    chooseComponent(number) {
+        switch (number) {
+            case 1:
+                return <Contact />;
+            case 2:
+                return <Home />;
+            default:
+                break;
+        }
+    }
+
     render() {
         return (
             <div className="Uppermost-container">
-                { /* Here will be component children */ }
-                <Home />
-                {/* <Contact /> */}
+                {this.chooseComponent(1)}
             </div>
         )
     }
