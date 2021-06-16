@@ -1,8 +1,9 @@
 .Uppermost-container {
     position: fixed;
+    left: 30em;
     top: 0;
     right: 0;
-    width: 75%;
+    width: 100%;
     height: 100%;
     background-color: grey;
     overflow: hidden;
