@@ -21,8 +21,8 @@ class Menu extends React.Component {
             <p>@farmersbrothers</p>
             
           </div>
-          <div className="pho"></div>
           <div className="phone">
+          <div className="pho"></div>
             <p>+420 777 777 777</p>
           </div>
         </footer>
