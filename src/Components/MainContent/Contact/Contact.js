@@ -5,9 +5,13 @@ import './Contact.css';
 class Contact extends React.Component {
     render() {
         return (
-            <div className="Big-container">
-                <Form />
-            </div>)
+            <div>
+                <div className="Cover-photo"></div>
+                <div className="Big-container">
+                    <Form />
+                </div>
+            </div>
+        )
     }
 }
 

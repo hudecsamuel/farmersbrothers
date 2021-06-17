@@ -1,0 +1,19 @@
+.Cover-photo {
+    height: 35vh;
+    width: 100%;
+    background-image: url('../../../Assets/Gallery/flag_truck.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-position-y: -35vh;
+}
+
+.Big-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 2fr 1fr 5fr 15fr;
+    height: auto;
+    width: 100%;
+    align-content: center;
+    justify-content: center;
+}

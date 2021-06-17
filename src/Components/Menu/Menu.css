@@ -11,25 +11,27 @@ Udělej to pls jako grid, to bude nejpřesnější ;) - jinak písmo jsem dal re
     left: 0;
     color: #cfb53c;
     text-align: center;
-    font-family: "Lato", sans-serif;
+}
 
+.Shit {
+    color: #a57655;
+    font-size: 1.3vh;
+    font-family: Libre Backerville;
+    letter-spacing: 0.9vh;
 }
 
 .Big-logo {
-    margin: 10% auto;
+    margin: 10% auto 8% auto;
     height: 17.5%;
-    background-image: url('../../Assets/BIG_LOGO.png');
+    background-image: url("../../Assets/BIG_LOGO.svg");
     background-repeat: no-repeat;
     background-size: contain;
     background-position: center;
 }
 
-p {
-    font-weight: normal;
-    font-size: 1.8vh;
-}
-span{
-    color: white;
+span {
+    color: rgb(201, 172, 152);
+    margin: 0 1vh;
 }
 
 img {
@@ -46,45 +48,101 @@ nav {
     justify-content: space-around;
 }
 
-nav div {
-    font-size: 3.5vh;
-}
-
 footer {
-    margin: 30% 10% 5% 10%;
+    margin: 35% 10% 5% 10%;
 }
+
 footer p {
-
-    font-size: 2.5vh;
+    font-size: 2.9vh;
 }
 
-.insta{
-    background:url(../../Assets/Instagram.png);
+.insta {
+    background: url("../../Assets/Instagram.svg");
 }
 
-.pho{
-        background:url(../../Assets/Phone.png);
+.pho {
+    background: url("../../Assets/Phone.svg");
 }
 
-.insta,
-.pho{
-    height: 35px;
-    width: 35px;
+.insta:hover {
+    background: url("../../Assets/Instagram-filled.svg");
+}
+
+.pho:hover {
+    background: url("../../Assets/Phone-filled.svg");
+}
+
+.insta:hover,
+.pho:hover {
+    height: 4.5vh;
+    width: 4.5vh;
     background-repeat: no-repeat;
     background-size: cover;
     position: center;
     margin-right: 5%;
 }
 
+.insta,
+.pho {
+    height: 4.5vh;
+    width: 4.5vh;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: center;
+    margin-right: 5%;
+}
+
+.pho-text,
+.insta-text {
+    height: fit-content;
+    align-self: center;
+}
+
 .phone,
 .instagram {
-    padding: 5%;
+    margin-top: 1vh;
     display: flex;
     justify-content: center;
+    cursor: pointer;
+    font-family: Lato, sans-serif;
+    font-weight: 600;
 }
 
-.instagram p,
-.phone p {
-    margin-top: 2%;
+.Home-button,
+.Price-button,
+.Gallery-button,
+.Contact-button {
+    margin: 0 auto;
+    width: fit-content;
+    position: relative;
+    font-family: Lato, sans-serif;
+    font-weight: 600;
+    letter-spacing: 0.1vh;
+    font-size: 3.8vh;
+    cursor: pointer;
 }
 
+.Home-button::before,
+.Price-button::before,
+.Gallery-button::before,
+.Contact-button::before {
+    visibility: hidden;
+    content: "";
+    position: absolute;
+    width: 0;
+    bottom: -1vh;
+    left: 50%;
+    height: 0.1vh;
+    border: 0.1vh solid #cfb53c;
+    background-color: #cfb53c;
+    transition: 0.3s linear;
+}
+
+.Home-button:hover::before,
+.Price-button:hover::before,
+.Gallery-button:hover::before,
+.Contact-button:hover::before {
+    visibility: visible;
+    left: 0;
+    width: 100%;
+}
