@@ -101,6 +101,7 @@
 }
 
 .Big-container .Map-image {
+    cursor: pointer;
     margin-bottom: 3vh;
     height: 80%;
     width: 80%;
@@ -108,4 +109,13 @@
     background-repeat: no-repeat;
     background-size: contain;
     background-position: center;
+}
+
+.Big-container .Map-image:hover {
+    background-color: black;
+    position: fixed;
+    height: 100vh;
+    width: 100vw;
+    top: 0;
+    left: 0;
 }
