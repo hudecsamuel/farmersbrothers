@@ -4,13 +4,14 @@ Udělej to pls jako grid, to bude nejpřesnější ;) - jinak písmo jsem dal re
 
 .Menu {
     background-color: black;
-    width: 50vh;
+    width: calc(50vh - 0.1vh); /* Subtracting border */
     height: 100%;
     position: fixed; /* Toto jsem dal fixed, aby pod tím nevznikal bílej scrollovací prostor */
     top: 0;
     left: 0;
     color: #cfb53c;
     text-align: center;
+    border-right: 0.1vh solid var(--main-yellow);
 }
 
 .Shit {
