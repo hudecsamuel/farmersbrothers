@@ -1,13 +1,13 @@
 #Main-form {
     color: white;
-    justify-self: right;
+    justify-self: center;
     align-self: center;
     margin: 1vh 0;
     width: 80%;
     height: 80%;
     display: grid;
     grid-row: 4;
-    grid-column: 1 / span 2;
+    grid-column: 1 / span 5;
     border: 2px solid black;
     grid-template-columns: 1fr 2fr;
     grid-template-rows: 1.5fr 1.5fr 2fr 0.5fr 1.5fr;

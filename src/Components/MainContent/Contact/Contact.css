@@ -1,28 +1,51 @@
 .Cover-photo {
-    height: 30vh;
+    z-index: -1;
+    position: absolute;
+    height: 100%;
     width: 100%;
     background-image: url("../../../Assets/Gallery/flag_truck.jpg");
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
-    background-position-y: -35vh;
+    background-position-y: 0;
+    animation: Slide-up-cover 1s ease 1s 1 normal forwards;
+    transform: scale(1.15);
+    background-position-y: -5vh;
 }
 
 .Big-container {
+    position: absolute;
+    bottom: 0;
+    z-index: 2;
+    border-top-left-radius: 1vh;
+    border-top-right-radius: 1vh;
     padding: 0 2.5%;
     color: white;
     background-color: #000;
     display: grid;
-    grid-template-columns: repeat(5, 1fr);
+    grid-template-columns: repeat(10, 1fr);
     grid-template-rows: 2fr 2.5fr 2fr 12fr;
     height: 70vh;
     width: 95%;
     margin: 0 auto;
     align-content: center;
     justify-content: center;
+    animation: Slide-up 1s ease 1s 1 normal forwards;
+    transform: translateY(60vh);
+}
+
+@keyframes Slide-up {
+    0% {}
+    100% {transform: translateY(0);}
+}
+
+@keyframes Slide-up-cover {
+    0% {}
+    100% {transform: scale(1); background-position-y: -35vh;}
 }
 
 .Big-container div {
+    grid-column: span 2;
     display: flex;
     flex-direction: column;
     position: relative;
@@ -51,7 +74,7 @@
     text-align: center;
     position: relative;
     grid-row: 1;
-    grid-column: 1 / span 5;
+    grid-column: 1 / span 10;
     font-size: 3.8vh;
     font-weight: bold;
     color: var(--main-yellow);
@@ -73,7 +96,7 @@
 .Contact-description {
     font-size: 2vh;
     grid-row: 2;
-    grid-column: 1 / span 5;
+    grid-column: 1 / span 10;
     text-align: center;
     justify-self: center;
     align-self: center;
@@ -88,8 +111,8 @@
     border-right: 0.3vh solid white;
 }
 
-.Map {
-    grid-column: 3 / span 3;
+.Big-container .Map {
+    grid-column: 6 / span 5;
     grid-row: 4;
 }
 
@@ -113,9 +136,9 @@
 
 .Big-container .Map-image:hover {
     background-color: black;
-    position: fixed;
-    height: 100vh;
-    width: 100vw;
+    position: absolute;
+    height: 100%;
+    width: 100%;
     top: 0;
     left: 0;
 }
