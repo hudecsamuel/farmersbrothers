@@ -1,4 +1,4 @@
-.Cover-photo {
+.Cover-photo-contact {
     z-index: -1;
     position: absolute;
     height: 100%;
@@ -7,10 +7,8 @@
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
-    background-position-y: 0;
-    animation: Slide-up-cover 1s ease 1s 1 normal forwards;
+    animation: Slide-up-cover 1s ease 0.5s 1 normal forwards;
     transform: scale(1.15);
-    background-position-y: -5vh;
 }
 
 .Big-container {
@@ -21,7 +19,7 @@
     border-top-right-radius: 1vh;
     padding: 0 2.5%;
     color: white;
-    background-color: #000;
+    background-color: black;
     display: grid;
     grid-template-columns: repeat(10, 1fr);
     grid-template-rows: 2fr 2.5fr 2fr 12fr;
@@ -30,7 +28,7 @@
     margin: 0 auto;
     align-content: center;
     justify-content: center;
-    animation: Slide-up 1s ease 1s 1 normal forwards;
+    animation: Slide-up 1s ease 0.5s 1 normal forwards;
     transform: translateY(60vh);
 }
 

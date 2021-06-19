@@ -1,4 +1,4 @@
-.Cover-photo {
+.Cover-photo-price {
     z-index: -1;
     position: absolute;
     height: 100%;
@@ -6,11 +6,9 @@
     background-image: url("../../../Assets/Gallery/road_truck.jpg");
     background-size: cover;
     background-repeat: no-repeat;
-    background-position: center;
-    background-position-y: 0;
-    animation: Slide-up-cover 1s ease 1s 1 normal forwards;
+    animation: Slide-up-cover-price 1s ease 0.5s 1 normal forwards;
     transform: scale(1.15);
-    background-position-y: -40vh;
+    background-position-y: -25vh;
 }
 
 .under-Image {
@@ -21,7 +19,7 @@
     border-top-right-radius: 1vh;
     padding: 0 2.5%;
     color: white;
-    background-color: #000;
+    background-color: black;
     display: grid;
     grid-template-columns: repeat(10, 1fr);
     grid-template-rows: 2fr 2.5fr 2fr 12fr;
@@ -30,6 +28,16 @@
     margin: 0 auto;
     align-content: center;
     justify-content: center;
-    animation: Slide-up 1s ease 1s 1 normal forwards;
+    animation: Slide-up-price 1s ease 0.5s 1 normal forwards;
     transform: translateY(60vh);
+}
+
+@keyframes Slide-up-price {
+    0% {}
+    100% {transform: translateY(0);}
+}
+
+@keyframes Slide-up-cover-price {
+    0% {}
+    100% {transform: scale(1); background-position-y: -65vh;}
 }

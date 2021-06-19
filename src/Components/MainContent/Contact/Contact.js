@@ -6,7 +6,7 @@ class Contact extends React.Component {
     render() {
         return (
             <div>
-                <div className="Cover-photo"></div>
+                <div className="Cover-photo-contact"></div>
                 <div className="Big-container">
                     <h1 className="Contact-heading">KONTAKT</h1>
                     <h3 className="Contact-description">Neváhejte nás v případě jakýkoliv dotazů či nejasností kontaktovat, jsme Vám plně k dispozici.</h3>
