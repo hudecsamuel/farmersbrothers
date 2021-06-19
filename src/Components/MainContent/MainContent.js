@@ -2,17 +2,20 @@ import React from 'react';
 import Home from './Home/Home';
 import Contact from './Contact/Contact';
 import Price from './Price/Price';
+import Gallery from './Gallery/Gallery';
 import './MainContent.css';
 
 class MainContent extends React.Component {
-    chooseComponent(number) {
-        switch (number) {
+    chooseComponent(choice) {
+        switch (choice) {
             case 1:
-                return <Contact />;
-            case 2:
                 return <Home />;
-            case 3:
+            case 2:
                 return <Price />;
+            case 3:
+                return <Gallery />;
+            case 4:
+                return <Contact />;
             default:
                 break;
         }
@@ -21,7 +24,7 @@ class MainContent extends React.Component {
     render() {
         return (
             <div className="Uppermost-container">
-                {this.chooseComponent(3)}
+                {this.chooseComponent(this.props.choice)}
             </div>
         )
     }
