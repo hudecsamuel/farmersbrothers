@@ -7,8 +7,8 @@ class Menu extends React.Component {
     return (
       <div className="Menu">
         <div className="Big-logo"></div>
-        <p><span>→ </span>  shit happens  <span> ←</span></p>
-        <nav> {/* Jak jsem říkal, 'navigator' tag neexistuje, psalo to chybu v browseru :D (je to 'nav') */}
+        <p className="Shit"><span>→ </span>  SHIT HAPPENS  <span> ←</span></p>
+        <nav>
           <div className="Home-button">DOMŮ</div>
           <div className="Price-button">CENÍK</div>
           <div className="Gallery-button">GALERIE</div>
@@ -16,14 +16,17 @@ class Menu extends React.Component {
         </nav>
         <footer>
           <div className="instagram">
-          <div className="insta"></div>
-            {/* Dávej sem ↑ pls relativní cesty a obrázky do složky Assets... C:\Users\simon\Desktop\TransparentLogo nevidím, protože ho máš ve svým kompu... */}
-            <p>@farmersbrothers</p>
-            
+            <div className="insta"></div>
+            <div className="insta-text">
+              <p>@farmersbrothers</p>
+            </div>
+
           </div>
           <div className="phone">
-          <div className="pho"></div>
-            <p>+420 777 777 777</p>
+            <div className="pho"></div>
+            <div className="pho-text">
+              <p>+420 777 777 777</p>
+            </div>
           </div>
         </footer>
       </div>
