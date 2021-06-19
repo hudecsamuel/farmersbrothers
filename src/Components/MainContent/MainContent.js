@@ -1,6 +1,7 @@
 import React from 'react';
 import Home from './Home/Home';
-import Contact from './Contact/Contact'
+import Contact from './Contact/Contact';
+import Price from './Price/Price';
 import './MainContent.css';
 
 class MainContent extends React.Component {
@@ -10,6 +11,8 @@ class MainContent extends React.Component {
                 return <Contact />;
             case 2:
                 return <Home />;
+            case 3:
+                return <Price />;
             default:
                 break;
         }
@@ -18,7 +21,7 @@ class MainContent extends React.Component {
     render() {
         return (
             <div className="Uppermost-container">
-                {this.chooseComponent(1)}
+                {this.chooseComponent(3)}
             </div>
         )
     }
