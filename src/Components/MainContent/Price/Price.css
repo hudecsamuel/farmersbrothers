@@ -10,7 +10,7 @@
     background-position-y: 0;
     animation: Slide-up-cover 1s ease 1s 1 normal forwards;
     transform: scale(1.15);
-    background-position-y: -40vh;
+    background-position-y: -10vh;
 }
 
 .under-Image {
@@ -24,7 +24,7 @@
     background-color: #000;
     display: grid;
     grid-template-columns: repeat(10, 1fr);
-    grid-template-rows: 2fr 2.5fr 2fr 12fr;
+    grid-template-rows: 1fr 0.5fr 5fr 1fr 1.5fr;
     height: 70vh;
     width: 95%;
     margin: 0 auto;
@@ -32,4 +32,45 @@
     justify-content: center;
     animation: Slide-up 1s ease 1s 1 normal forwards;
     transform: translateY(60vh);
+    text-align: center;
+}
+
+.Contact-heading{
+    text-align: center;
+    position: relative;
+    grid-row: 1;
+    grid-column: 1 / span 10;
+    font-size: 3.8vh;
+    font-weight: bold;
+    color: var(--main-yellow);
+    justify-self: center;
+    align-self: flex-end;
+}
+
+.Main-div{
+    border: solid 0.2vh var(--main-yellow);
+    border-radius: 2vh;
+    grid-column: 1 / span 10 ;
+    grid-row:3 / 5;
+}
+
+.Notes{
+    grid-column: 1 / span 10 ;
+    grid-row: 5 / 5;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    
+}
+
+.Notes span{
+    display: flex;
+    color: #fff;
+    flex-direction: column;
+    /* border: 1px solid white; */
+    text-align: left;
+    justify-content: center;
+    line-height: 2.5vh;
+    margin: 0;
+    font-weight: bold;
 }
