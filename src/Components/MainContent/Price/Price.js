@@ -12,7 +12,20 @@ class Price extends React.Component {
                         <div className="left">
                             <div className="calc">
                                 <div className="výběr">
-                                    <div className="roleta"><span>CISTERNOVÁ DOPRAVA</span></div>
+                                    <div className="roleta"><span>CISTERNOVÁ DOPRAVA</span>
+                                        <div id="dd">
+                                            <div>
+                                                <span id="dd1">CISTERNOVÁ DOPRAVA</span>
+                                            </div>
+                                            <div>
+                                            <span id="dd2">SKLIZŇOVÁ DOPRAVA</span>
+                                            </div>
+                                            <div>
+                                            <span id="dd3">ZEMNÍ PRÁCE</span>
+                                            </div>
+                                        </div>
+                                        <div className="arrow" onClick={dropdown}></div>
+                                    </div>
                                 </div>
                             </div>
                             <div className="result">
@@ -32,7 +45,10 @@ class Price extends React.Component {
                 </div>
             </div>
         )
-    }
+         function dropdown(){
+            document.getElementById('dd').style.display = 'table'
 }
+        }
+    }
 
 export default Price;

@@ -11,6 +11,9 @@
     background-position-y: -25vh;
 }
 
+
+/* POD OBRÁZKEM */
+
 .under-Image {
     position: absolute;
     bottom: 0;
@@ -72,6 +75,10 @@
    text-align: left;
 }
 
+
+/* KALKULAČKA */
+
+
 .calc{
     
     display: grid;
@@ -85,6 +92,7 @@
     grid-template-columns: 1fr 13fr 1fr;
 }
 .roleta{
+    position: relative;
     border: solid 0.2vh var(--main-yellow);
     grid-row: 2;
     grid-column: 2;
@@ -98,6 +106,46 @@
     font-size: 2vh;
     color: var(--main-yellow);
 }
+#dd{
+    display: none;
+    height: fit-content;
+    position: absolute;
+    width: 100%;
+    top: 100%;
+}
+
+#dd div{
+    position: top;
+    border: solid 0.2vh var(--main-yellow);
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    height: 4vh;
+    margin: auto;
+    font-weight: bold;
+    font-size: 2vh;
+    color: var(--main-yellow);
+}
+#dd div:hover{
+    background-color: var(--main-yellow);
+    cursor: pointer;
+}
+
+#dd span:hover{
+    color: black;
+}
+
+.arrow{
+    background: url(/src/Assets/Arrow.svg);
+    height: 2.3vh;
+    width: 3.6vh;
+    background-repeat: no-repeat;
+    background-size: fill;
+    position: center;
+    margin: auto 2% auto 0;
+    cursor: pointer;
+}
+
 .result{
     grid-row:2;
     display: grid;
@@ -120,6 +168,21 @@
     color: var(--main-yellow);
 }
 
+
+
+@keyframes Slide-up-price {
+    0% {}
+    100% {transform: translateY(0);}
+}
+
+@keyframes Slide-up-cover-price {
+    0% {}
+    100% {transform: scale(1); background-position-y: -65vh;}
+}
+
+
+/* POZNÁMKY */
+
 .Notes{
     grid-column: 1 / span 10 ;
     grid-row: 5 / 5;
@@ -139,14 +202,4 @@
     line-height: 2.5vh;
     margin: 0;
     font-weight: bold;
-}
-
-@keyframes Slide-up-price {
-    0% {}
-    100% {transform: translateY(0);}
-}
-
-@keyframes Slide-up-cover-price {
-    0% {}
-    100% {transform: scale(1); background-position-y: -65vh;}
 }
