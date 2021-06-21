@@ -102,13 +102,13 @@
     align-content: center;
 }
 .roleta span{
-    margin: auto;
+    margin: auto 15.6vh auto auto;
     font-weight: bold;
     font-size: 2vh;
     color: var(--main-yellow);
 }
 #dd{
-    display: none;
+    display: table;
     height: fit-content;
     position: absolute;
     width: 100%;
@@ -119,10 +119,9 @@
     position: top;
     border: solid 0.2vh var(--main-yellow);
     display: flex;
+    flex-direction: column;
     justify-content: center;
-    align-content: center;
     height: 4vh;
-    margin: auto;
     font-weight: bold;
     font-size: 2vh;
     color: var(--main-yellow);
@@ -130,9 +129,6 @@
 #dd div:hover{
     background-color: var(--main-yellow);
     cursor: pointer;
-}
-
-#dd span:hover{
     color: black;
 }
 
