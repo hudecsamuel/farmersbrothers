@@ -143,6 +143,11 @@
     cursor: pointer;
 }
 
+.Chosen{
+    height: 100%;
+    width: 100%;
+}
+
 .result{
     grid-row:2;
     display: grid;
