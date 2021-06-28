@@ -136,8 +136,20 @@
 .Big-container .Map-image:hover {
     background-color: black;
     position: fixed;
-    height: 100%;
-    width: 100%;
+    margin: 0 auto;
+    height: 95%;
+    transform: translate(-15%, -2%);
+    right: 0;
     bottom: 0;
+    z-index: 1;
+}
+
+.Big-container .Map-image:hover::before {
+    position: fixed;
     left: 0;
+    content: '';
+    height: 100%;
+    width: 200%;
+    background-color: brown;
+    z-index: -1;
 }
