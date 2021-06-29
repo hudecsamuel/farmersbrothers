@@ -184,20 +184,28 @@
     align-items: baseline;
 }
 .délka,
-.objem,
+.objem{
+flex-grow: 0.17;
+}
+
 .cena{
-flex-grow: 0.14;
+    flex-grow: 0.15;
 }
 .zadání-obrátka,
-.zadání-náklad,
+.zadání-náklad{
+    display: flex;
+    flex-grow: 0.4;
+    justify-content: center;
+    align-items: center;
+}
 .přepočet{
-flex-grow: 0.4;
+    flex-grow: 0.41;
 }
 
 .plus{
     background: url(../../../Assets/Plus.svg);
     height: 2.3vh;
-    width: 3.6vh;
+    width: 2.5vh;
     background-repeat: no-repeat;
     cursor: pointer;
     display: inline-block;
@@ -205,7 +213,7 @@ flex-grow: 0.4;
 .minus{
     background: url(../../../Assets/Minus.svg);
     height: 2.3vh;
-    width: 3.6vh;
+    width: 2.5vh;
     background-repeat: no-repeat;
     cursor: pointer;
     display: inline-block;
@@ -222,6 +230,14 @@ flex-grow: 0.4;
     color: black;
     font-size: xx-large;
     font-weight: bold;
+}
+
+/*sklizňová doprava*/
+.wrap{
+    height: 80%;
+    width: 80%;
+    margin: 0 auto;
+    background-color: tomato;
 }
 
 .result{
@@ -278,9 +294,6 @@ flex-grow: 0.4;
     line-height: 2.5vh;
     margin: 0;
     font-weight: bold;
-<<<<<<< HEAD
-}
-=======
 }
 
 @keyframes Slide-up-price {
@@ -292,4 +305,3 @@ flex-grow: 0.4;
     0% {}
     100% {transform: scale(1); background-position-y: -55vh;}
 }
->>>>>>> 777a0f82070ad716f690cd5cc58b37dba5b14a5b

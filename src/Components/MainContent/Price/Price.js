@@ -6,12 +6,7 @@ import Zemní from './Chosen/Zemní/Zemní'
 
 function Price() {
     const [show,setShow]=useState(false)
-    const [look, setLook]=useState(true)
     const [choice, setChoice]=useState(1)
-/*     constructor(props) {
-        super(props);
-        this.handleClick = this.handleClick.bind(this);
-      } */
 
      function handleClick(e) { /* když pracuji ve funkci, tak musíš napsat že se jedná o funkci, jinak to nepozná - debil */
         const elText = e.target.innerText;
@@ -55,7 +50,7 @@ function Price() {
                             <div className="calc">
                                 <div className="Chosen">                                    
                                     <div className="výběr">
-                                        <div className="roleta"><span>CISTERNOVÁ DOPRAVA</span> 
+                                        <div className="roleta"><span></span> 
                                         {    
                                             show?<div id="dd">
                                                 <div onClick={handleClick}>CISTERNOVÁ DOPRAVA</div>
@@ -71,8 +66,8 @@ function Price() {
                                 {showChoice()}
                             </div>
                             <div className="result">
-                                <span onClick={()=>setLook(!look)}>Předpokládaná cena:</span>
-                                { look?<span>2850 Kč</span>:null}
+                                <span>Předpokládaná cena:</span>
+                                <span>2 456</span>
                             </div>
                         </div>
                         <div className="right"><p>Obvyklá míra napuštění cisterny je 21 m<sup>3</sup></p></div>
@@ -87,28 +82,6 @@ function Price() {
                 </div>
             </div>
         );
-
-        
-          /*   let clicks = false;
-            
-             let dropdown = function(){
-                 var clicks = 0+clicks;
-                 clicks += 1;
-                 if(clicks === 1){
-                     ft();
-                     console.log(clicks);
-                 }
-                 else{
-                     st();
-                     console.log(clicks);
-                 }
-             }
-            function ft(){
-                document.getElementById('dd').style.display = 'table';
-             }
-            function st(){
-                document.getElementById('dd').style.display = 'none';
-             }*/
     }
 
 export default Price;

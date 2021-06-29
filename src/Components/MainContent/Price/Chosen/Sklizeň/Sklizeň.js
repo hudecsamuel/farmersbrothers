@@ -6,7 +6,9 @@ function Sklizeň() {
     
 
         return (
-           "hello potřetí"
+            <div className="komplet">
+               <div className="wrap"> sdafasdfsd fasdf</div>
+            </div>
         )
     }
 export default Sklizeň;
