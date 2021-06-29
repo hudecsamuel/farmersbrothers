@@ -53,8 +53,7 @@ function Price() {
                     <div className="Main-div">
                         <div className="left">
                             <div className="calc">
-                                <div className="Chosen">
-                                    {showChoice()}
+                                <div className="Chosen">                                    
                                     <div className="výběr">
                                         <div className="roleta"><span>CISTERNOVÁ DOPRAVA</span> 
                                         {    
@@ -65,9 +64,11 @@ function Price() {
                                             </div>:null
                                         }
                                             <div className="arrow" onClick={()=>setShow(!show)}></div>
-                                        </div>
+                                        </div>                                        
                                     </div>
+                                    
                                 </div>
+                                {showChoice()}
                             </div>
                             <div className="result">
                                 <span onClick={()=>setLook(!look)}>Předpokládaná cena:</span>
