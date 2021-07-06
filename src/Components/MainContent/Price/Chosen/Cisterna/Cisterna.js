@@ -27,14 +27,18 @@ function Cisterna() {
                             <span>Objem nákladu [m3]</span>
                          </div>
 
-                         <div className="zadání-náklad"><div className="plus" onClick={() => náklad(objem + 1)}></div><span>{objem}</span><div className="minus"onClick={() => náklad(objem - 1)}></div></div>
+                         <div className="zadání-náklad">
+                             <div className="plus" onClick={() => náklad(objem + 1)}></div>
+                                <span>{objem}</span>
+                            <div className="minus"onClick={() => náklad(objem - 1)}></div>
+                        </div>
                      </div>
 
                     <div className="mkm">
                         <div className="cena">
                             <span>Cena za m3/km</span>
                         </div>
-                        <div className="přepočet"><span>2,93</span></div>
+                        <div className="přepočet"><span>{délka/objem}</span></div>
                         </div>
                 </div>
            
