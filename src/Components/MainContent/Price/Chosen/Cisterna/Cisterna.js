@@ -7,6 +7,12 @@ function Cisterna() {
     const [délka, obrátka]=useState(1); /*useState je hook, který nám vrací současný stav (délka) a funkci(obrátka), která stav updatuje*/
     const [objem, náklad]=useState(1);
 
+    function handleClick(e) {
+        var výsledek = objem * délka;
+        console.log(výsledek);
+        document.getElementById("výsledek").innerHTML = výsledek;
+        }
+
         return (
             <div className="komplet">
                 <div className="parametr">
@@ -42,7 +48,7 @@ function Cisterna() {
                         </div>
                 </div>
            
-                <button className="tlačítko"><span>Spočítat</span></button>
+                <button className="tlačítko" onClick={handleClick}><span>Spočítat</span></button>
            </div>
         )
     }

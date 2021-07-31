@@ -66,7 +66,7 @@ function Price() {
                             </div>
                             <div className="result">
                                 <span>Předpokládaná cena:</span>
-                                <span>2465</span>
+                                <span id="výsledek">2465</span>
                             </div>
                         </div>
                         <div className="right"><p>Obvyklá míra napuštění cisterny je 21 m<sup>3</sup></p></div>
