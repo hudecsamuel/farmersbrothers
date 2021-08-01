@@ -1,6 +1,4 @@
-import React,{useCallback, useState} from "react";
-import Price from "../../Price";
-
+import React,{useState} from "react";
 
 
 function Cisterna() {

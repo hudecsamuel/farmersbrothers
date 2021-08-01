@@ -3,12 +3,15 @@ import './Price.css'
 import Cisterna from './Chosen/Cisterna/Cisterna'
 import Sklizeň from './Chosen/Sklizeň/Sklizeň'
 import Zemní from './Chosen/Zemní/Zemní'
+import CisternaVpravo from './Chosen/Cisterna/CisternaVpravo'
+import SklizeňVpravo from './Chosen/Sklizeň/SklizeňVpravo'
+import ZemníVpravo from './Chosen/Zemní/ZemníVpravo'
 
 function Price() {
     const [show,setShow]=useState(false)
     const [choice, setChoice]=useState(1)
 
-     function handleClick(e) { /* když pracuji ve funkci, tak musíš napsat že se jedná o funkci, jinak to nepozná - debil */
+     function handleClick(e) { /* když pracuji ve funkci, tak musíš napsat že se jedná o funkci, jinak to nepozná*/
         const elText = e.target.innerText;
         console.log(elText);
         switch (elText) {
@@ -39,6 +42,19 @@ function Price() {
               return <Cisterna/>;
           }
       }
+      function showChoice2(){
+        switch (choice) {
+            case 1:
+              return <CisternaVpravo/>; 
+            case 2:
+              return <SklizeňVpravo/>;
+            case 3:
+              return <ZemníVpravo/>;
+            default:
+              return <CisternaVpravo/>;
+          }
+        }
+      
     
         return (
             <div>
@@ -66,10 +82,10 @@ function Price() {
                             </div>
                             <div className="result">
                                 <span>Předpokládaná cena:</span>
-                                <span id="výsledek">2465</span>
+                                <span id="výsledek">0</span>
                             </div>
                         </div>
-                        <div className="right"><p>Obvyklá míra napuštění cisterny je 21 m<sup>3</sup></p></div>
+                        <div className="right">{showChoice2()}</div>
                     </div>
                 
 
