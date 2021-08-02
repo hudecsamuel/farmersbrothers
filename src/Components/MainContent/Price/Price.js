@@ -10,6 +10,7 @@ import ZemníVpravo from './Chosen/Zemní/ZemníVpravo'
 function Price() {
     const [show,setShow]=useState(false)
     const [choice, setChoice]=useState(1)
+    
 
      function handleClick(e) { /* když pracuji ve funkci, tak musíš napsat že se jedná o funkci, jinak to nepozná*/
         const elText = e.target.innerText;
@@ -28,6 +29,7 @@ function Price() {
             setChoice(1);
         }
         setShow(!show);
+        document.getElementById("výsledek").innerHTML = 0;
       }
 
       function showChoice(){
@@ -41,6 +43,7 @@ function Price() {
             default:
               return <Cisterna/>;
           }
+          
       }
       function showChoice2(){
         switch (choice) {

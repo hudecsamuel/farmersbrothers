@@ -29,9 +29,9 @@ function Sklizeň() {
                             <span>Počet dní</span>
                          </div>
                          <div className="zadání-dny">
-                             <div className="plus" onClick={() => obrátka(dny + 1)}></div>
+                         <div className="minus" onClick={() => obrátka(dny - 1)}></div>
                              <span>{dny}</span>
-                             <div className="minus" onClick={() => obrátka(dny - 1)}></div>
+                             <div className="plus" onClick={() => obrátka(dny + 1)}></div>
                          </div>
                     </div>
 
@@ -41,9 +41,9 @@ function Sklizeň() {
                          </div>
 
                          <div className="zadání-hodiny">
-                             <div className="plus" onClick={() => náklad(hodiny + 1)}></div>
-                                <span>{hodiny}</span>
                             <div className="minus"onClick={() => náklad(hodiny - 1)}></div>
+                                <span>{hodiny}</span>
+                            <div className="plus" onClick={() => náklad(hodiny + 1)}></div>
                         </div>
                      </div>
                 </div>
