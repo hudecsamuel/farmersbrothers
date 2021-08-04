@@ -74,7 +74,7 @@ function Price() {
                                             show?<div id="dd">
                                                 <div onClick={handleClick}>CISTERNOVÁ DOPRAVA</div>
                                                 <div onClick={handleClick}>SKLIZŇOVÁ DOPRAVA</div>
-                                                <div onClick={handleClick}>ZEMNÍ PRÁCE</div>
+                                                {/* <div onClick={handleClick}>ZEMNÍ PRÁCE</div> */}
                                             </div>:null
                                         }
                                             <div className="arrow" onClick={()=>setShow(!show)}></div>

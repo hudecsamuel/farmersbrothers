@@ -2,8 +2,8 @@ import React,{useState} from "react";
 
 
 function Cisterna() {
-    const [délka, obrátka]=useState(1); /*useState je hook, který nám vrací současný stav (délka) a funkci(obrátka), která stav updatuje*/
-    const [objem, náklad]=useState(1);
+    const [délka, obrátka] =useState(1); /*useState je hook, který nám vrací současný stav (délka) a funkci(obrátka), která stav updatuje*/
+    /* const [objem, náklad]=useState(1); */
 
 
     function handleClick() {
@@ -73,9 +73,11 @@ function Cisterna() {
         }
 
         function handleResult(){
-            var výsledek=objem*handleClick()*délka;
-            document.getElementById("výsledek").innerHTML = výsledek;
+            var výsledek=21*handleClick()*délka;
+            document.getElementById("výsledek").innerHTML = Math.round(výsledek);
         }
+
+
 
         return (
             <div className="komplet">
@@ -88,19 +90,19 @@ function Cisterna() {
                          <div className="zadání-obrátka">
                             <div className="minus" onClick={() => obrátka(délka - 1)}></div>
                                 <span>{délka}</span>
-                            <div className="plus" onClick={() => obrátka(délka + 1)}></div>
+                            <div className="plus"  onClick={() => obrátka(délka + 1)} ></div>
                          </div>
                     </div>
 
                     <div className="náklad">
                         <div className="objem">
-                            <span>Objem nákladu [m<sup id="sub">3</sup>]</span>
+                            <span>Obvyklý objem nákladu [m<sup id="sub">3</sup>]</span>
                          </div>
 
                          <div className="zadání-náklad">
-                            <div className="minus"onClick={() => náklad(objem - 1)}></div> 
-                                <span>{objem}</span>
-                            <div className="plus" onClick={() => náklad(objem + 1)}></div>
+                            {/* <div className="minus"onClick={() => náklad(objem - 1)}></div> */} 
+                                <span id="objem">21</span>
+                            {/* <div className="plus" onClick={() => náklad(objem + 1)}></div> */}
                         </div>
                      </div>
 
@@ -116,5 +118,5 @@ function Cisterna() {
                 <button className="tlačítko" onClick={handleResult}><span>Spočítej</span></button>
            </div>
         )
-    }
+    } 
 export default Cisterna;

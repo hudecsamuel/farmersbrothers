@@ -16,7 +16,7 @@ function SklizeňVpravo() {
               </tr>
               <tr>
                 <td>Maximální denní sazba [Kč]</td>
-                <td>1000</td>
+                <td>11000</td>
                 <td>Maximální denní sazba je zastropení ceny i pro případ, že souprava bude v provozu déle než 11 hodin během jednoho dne.</td>
               </tr>
             </table>

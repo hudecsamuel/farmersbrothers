@@ -146,6 +146,7 @@ td{
     font-weight: bold;
     font-size: 2vh;
     color: var(--main-yellow);
+    background-color: black;
 }
 #dd div:hover{
     background-color: var(--main-yellow);
@@ -209,6 +210,9 @@ flex-grow: 0.17;
     flex-grow: 0.4;
     justify-content: center;
     align-items: center;
+}
+#objem{
+    margin: 0 5vh;
 }
 .přepočet{
     flex-grow: 0.41;
