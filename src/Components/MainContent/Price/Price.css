@@ -214,9 +214,6 @@
     line-height: 2.5vh;
     margin: 0;
     font-weight: bold;
-<<<<<<< HEAD
-}
-=======
 }
 
 @keyframes Slide-up-price {
@@ -228,4 +225,3 @@
     0% {}
     100% {transform: scale(1); background-position-y: -55vh;}
 }
->>>>>>> 777a0f82070ad716f690cd5cc58b37dba5b14a5b
