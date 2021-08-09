@@ -69,15 +69,26 @@
 }
 
 .left{
-    display: grid;
-    grid-template-rows: 2fr 1fr;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
 }
 
 .right{
     border-left: solid 0.2vh var(--main-yellow);
-    grid-column: 2/2;
-    display: grid;
-    grid-template-rows: repeat(6, 1fr);
+    display: flex;
+}
+
+.table{
+    width: 100%;
+    display: flex;
+}
+
+th,
+td{
+    vertical-align: middle;
+    border: solid 0.1vh var(--main-yellow);
+    padding: 0.7vh;
 }
 
 .right p{
@@ -91,10 +102,10 @@
 
 
 .calc{
-    
-    display: grid;
-    grid-template-rows: 2fr 1fr 1fr 1fr 3fr;
+    display: flex;
+    flex-direction: column;
     border-bottom:  solid 0.2vh var(--main-yellow);
+    flex-grow: 4;
 }
 
 .výběr{
@@ -112,10 +123,10 @@
     align-content: center;
 }
 .roleta span{
-    margin: auto 15.6vh auto auto;
     font-weight: bold;
     font-size: 2vh;
     color: var(--main-yellow);
+    flex-grow: 2;
 }
 #dd{
     display: table;
@@ -135,6 +146,7 @@
     font-weight: bold;
     font-size: 2vh;
     color: var(--main-yellow);
+    background-color: black;
 }
 #dd div:hover{
     background-color: var(--main-yellow);
@@ -149,35 +161,132 @@
     background-repeat: no-repeat;
     background-size: fill;
     position: center;
-    margin: auto 2% auto 0;
     cursor: pointer;
+    flex-grow: 0.1;
 }
 
 .Chosen{
-    height: 100%;
     width: 100%;
+    flex-grow: 2;
+}
+.komplet{
+    width: 100%;
+    flex-grow: 15;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+.parametr{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    flex-grow: 1;
+    align-items: flex-start;
+}
+.parametr span{
+    color: var(--main-yellow);
+}
+.obrátka,
+.náklad,
+.mkm{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: baseline;
+}
+.délka,
+.objem,
+.dny,
+.hodiny{
+flex-grow: 0.17;
+}
+
+.cena{
+    flex-grow: 0.15;
+}
+.zadání-obrátka,
+.zadání-náklad{
+    display: flex;
+    flex-grow: 0.4;
+    justify-content: center;
+    align-items: center;
+}
+#objem{
+    margin: 0 5vh;
+}
+.přepočet{
+    flex-grow: 0.41;
+}
+
+.plus{
+    background: url(../../../Assets/Plus.svg);
+    height: 2.3vh;
+    width: 2.5vh;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    display: inline-block;
+}
+.minus{
+    background: url(../../../Assets/Minus.svg);
+    height: 2.3vh;
+    width: 2.5vh;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    display: inline-block;
+}
+
+.tlačítko{
+    margin: 2% auto;
+    padding: 2% 4%;
+    background-color: var(--main-yellow);
+    border-radius: 0.5vh;
+    cursor: pointer;
+}
+.tlačítko span{
+    color: black;
+    font-size: xx-large;
+    font-weight: bold;
+}
+
+/*sklizňová doprava*/
+.wrap{
+    width: 100%;
+    height: 100%;
+    display: flex;
 }
 
 .result{
-    grid-row:2;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 1fr 2fr 1fr;
-    
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    flex-grow: 1;
 }
 
 .result span:first-child{
-    grid-row: 2;
-    margin: auto;
     color: var(--main-yellow);
+    font-size: x-large;
+    font-weight: bold;
 }
 .result span:last-child{
     grid-column: 3;
-    grid-row: 2;
-    margin: auto;
     font-size: 4vh;
     font-weight: bold;
     color: var(--main-yellow);
+}
+
+.zadání-dny,
+.zadání-hodiny{
+    display: flex;
+    flex-grow: 0.35;
+    justify-content: center;
+    align-items: center;
+}
+
+table{
+    width: 100%;
+    height: 100%;
+    margin: auto 0;
 }
 
 
@@ -225,3 +334,12 @@
     0% {}
     100% {transform: scale(1); background-position-y: -55vh;}
 }
+<<<<<<< HEAD
+=======
+
+
+#sub{
+    vertical-align: super;
+    font-size: x-small;
+    }
+>>>>>>> a65fc3577f4dd1ff93187b2ac05b222025ac1a70
