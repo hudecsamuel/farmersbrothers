@@ -1,5 +1,6 @@
 import React from 'react';
 import Form from './Form';
+import emailjs from 'emailjs-com';
 import './Contact.css';
 
 class Contact extends React.Component {
@@ -7,16 +8,54 @@ class Contact extends React.Component {
         super(props);
         this.handleFormSubmit = this.handleFormSubmit.bind(this);
     }
-
+    x
     handleFormSubmit(e) {
         e.preventDefault();
+        const txtArea = document.getElementById('Form-textarea');
+        let dots = '';
+        txtArea.innerText = `ODESÍLÁNÍ${dots}`
+        const dotsID = setInterval(() => {
+            txtArea.innerText = `ODESÍLÁNÍ${dots}`
+            if (dots.length < 7) return dots = dots + '.'
+            return dots = ''
+        }, 100);
+
+
+        if (document.getElementById('Hrnekmedu').value) {
+            console.log('Smůla: ' + document.getElementById('Hrnekmedu').value);
+        } else {
+            emailjs.sendForm('r06ert-je-developer', 'simple-template-01', e.target, 'user_97wrQev3ZYhN9j8ECOZFE') // These credentials are gonna change
+                .then(response => {
+                    clearInterval(dotsID);
+                    txtArea.style.color = 'green'
+                    txtArea.innerText = 'ZPRÁVA ODESLÁNA :)'
+                    console.log('SUCCESS!', response.status, response.text);
+                    setTimeout(() => {
+                        txtArea.style.color = 'black'
+                        txtArea.innerText = ''
+                        e.target.reset();
+                    }, 2000);
+                }).catch(error => {
+                    clearInterval(dotsID);
+                    txtArea.style.color = 'red'
+                    txtArea.innerText = 'CHYBA! :('
+                    setTimeout(() => {
+                        txtArea.style.color = 'black'
+                        txtArea.innerText = ''
+                        e.target.reset();
+                    }, 2000);
+                    console.log('FAILED...', error);
+                });
+        }        
+        e.target.reset();
     }
+
 
     render() {
         return (
             <div>
                 <div className="Cover-photo-contact"></div>
-                <div className="Big-container">
+                <div className="Contact-big-container">
                     <h1 className="Contact-heading">KONTAKT</h1>
                     <h3 className="Contact-description">Neváhejte nás v případě jakýkoliv dotazů či nejasností kontaktovat, jsme Vám plně k dispozici.</h3>
                     <div>

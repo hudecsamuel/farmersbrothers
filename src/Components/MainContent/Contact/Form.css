@@ -19,6 +19,8 @@
     grid-column: 2;
     border-radius: 0.5vh;
     margin: 1vh 1vh 0 1vh;
+    padding-top: 1vh;
+    height: calc(100% - 2vh);
     resize: none;
     font-family: Lato, sans-serif;
     font-size: 2vh;

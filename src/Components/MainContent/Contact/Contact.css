@@ -12,7 +12,7 @@
     transform: scale(1.15);
 }
 
-.Big-container {
+.Contact-big-container {
     position: absolute;
     bottom: 0;
     z-index: 2;
@@ -32,6 +32,10 @@
     animation: Slide-up 1s ease 0.2s 1 normal forwards;
     transform: translateY(60vh);
 }
+.Contact-big-container p, 
+.Contact-big-container h4 {
+    word-break: break-all;
+}
 
 @keyframes Slide-up {
     0% {}
@@ -43,7 +47,7 @@
     100% {transform: scale(1); background-position-y: -35vh;}
 }
 
-.Big-container div {
+.Contact-big-container div {
     grid-column: span 2;
     display: flex;
     flex-direction: column;
@@ -57,12 +61,12 @@
     justify-content: center;
 }
 
-.Big-container div p {
+.Contact-big-container div p {
     font-size: 2vh;
     align-self: center;
 }
 
-.Big-container h4 {
+.Contact-big-container h4 {
     font-size: 2.2vh;
     font-weight: bold;
     line-height: 1.5;
@@ -102,6 +106,7 @@
 }
 
 .Second-div {
+    width: calc(100% - 0.3vh);
     border-left: 0.3vh solid white;
 }
 
@@ -110,20 +115,21 @@
     border-right: 0.3vh solid white;
 }
 
-.Big-container .Map {
+.Contact-big-container .Map {
     grid-column: 6 / span 5;
     grid-row: 4;
+    position: static;
 }
 
-.Big-container .Map p {
+.Contact-big-container .Map p {
     font-style: italic;
     color: var(--main-yellow);
     margin: 2.5vh 0 2vh 0;
     letter-spacing: 0;
 }
 
-.Big-container .Map-image {
-    cursor: pointer;
+.Contact-big-container .Map-image {
+    cursor: zoom-in;
     margin-bottom: 3vh;
     height: 80%;
     width: 80%;
@@ -131,25 +137,15 @@
     background-repeat: no-repeat;
     background-size: contain;
     background-position: center;
+    background-color: black;
 }
 
-.Big-container .Map-image:hover {
-    background-color: black;
-    position: fixed;
-    margin: 0 auto;
-    height: 95%;
-    transform: translate(-15%, -2%);
+.Contact-big-container .Map-image:active {
+    position: absolute;
+    margin: 1vh;
+    height: calc(100% - 2vh);
+    width: calc(100% - 2vh);
     right: 0;
     bottom: 0;
     z-index: 1;
-}
-
-.Big-container .Map-image:hover::before {
-    position: fixed;
-    left: 0;
-    content: '';
-    height: 100%;
-    width: 200%;
-    background-color: brown;
-    z-index: -1;
 }

@@ -32,8 +32,8 @@ const styles = {
         cursor: 'pointer',
         height: '5vh',
         width: '5vh',
-        top: '1vh',
-        right: '1vh',
+        top: '2vh',
+        right: '3vh',
         position: 'absolute'
     }
 }

@@ -8,11 +8,12 @@ class Form extends React.Component {
         return (
             <form id="Main-form" onSubmit={handleFormSubmit}>
                 <label>Jméno a příjmení</label>
-                <input type="text" />
+                <input name="name" type="text" required />
                 <label>E-mail</label>
-                <input type="email" placeholder="@" />
+                <input name="email" type="email" placeholder="@" required />
+                <input id="Hrnekmedu" name="subject" type="text" autoComplete="off" placeholder="Hrnek medu"></input>
                 <label className="Textarea-label">Zpráva</label>
-                <textarea />
+                <textarea id='Form-textarea' />
                 <button type="submit">Odeslat</button>
             </form>
         )

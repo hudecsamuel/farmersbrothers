@@ -58,3 +58,9 @@
 .Detail-cross:hover {
     background-image: url('../../../Assets/Crossmark-f.svg');
 }
+
+#Hrnekmedu {
+    position: absolute;
+    z-index: -1;
+    opacity: 0;
+}
