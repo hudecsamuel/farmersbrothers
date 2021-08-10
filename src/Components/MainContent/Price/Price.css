@@ -334,12 +334,9 @@ table{
     0% {}
     100% {transform: scale(1); background-position-y: -55vh;}
 }
-<<<<<<< HEAD
-=======
 
 
 #sub{
     vertical-align: super;
     font-size: x-small;
-    }
->>>>>>> a65fc3577f4dd1ff93187b2ac05b222025ac1a70
+}

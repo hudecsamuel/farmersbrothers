@@ -6,14 +6,15 @@ function Sklizeň() {
     const [hodiny, náklad]=useState(1);
 
     function handleClick() {
+        let výsledek = 0;
          if(hodiny<4){
-                var výsledek = 3000 * dny;
+                výsledek = 3000 * dny;
             }
             else if(hodiny>11){
-                var výsledek = 11000 * dny
+                výsledek = 11000 * dny
             }
             else{
-                var výsledek = hodiny * dny * 1000;
+                výsledek = hodiny * dny * 1000;
             }
         
         console.log(výsledek);

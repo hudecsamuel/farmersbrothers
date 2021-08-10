@@ -11,7 +11,6 @@ Udělej to pls jako grid, to bude nejpřesnější ;) - jinak písmo jsem dal re
     left: 0;
     color: #cfb53c;
     text-align: center;
-    border-right: 0.1vh solid var(--main-yellow);
 }
 
 .Shit {
@@ -107,6 +106,14 @@ footer p {
     cursor: pointer;
     font-family: Lato, sans-serif;
     font-weight: 600;
+}
+
+.instagram a {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    text-decoration: none;
+    color: var(--main-yellow);
 }
 
 .Home-button,

@@ -3,6 +3,15 @@ import Form from './Form';
 import './Contact.css';
 
 class Contact extends React.Component {
+    constructor(props) {
+        super(props);
+        this.handleFormSubmit = this.handleFormSubmit.bind(this);
+    }
+
+    handleFormSubmit(e) {
+        e.preventDefault();
+    }
+
     render() {
         return (
             <div>
@@ -35,7 +44,7 @@ class Contact extends React.Component {
                         <p>Kde všude jste nás mohli potkat:</p>
                         <div className="Map-image"></div>
                     </div>
-                    <Form />
+                    <Form handleFormSubmit={this.handleFormSubmit} />
                 </div>
             </div >
         )
