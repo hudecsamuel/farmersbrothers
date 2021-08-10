@@ -1,0 +1,60 @@
+.Photo-main-div::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.Photo-main-div:hover::before {
+    background-color: rgba(255,255,255,0.3);
+    transition: 0.5s;
+}
+
+@keyframes Slide-from-right {
+    from {transform: translateX(100%);}
+    to {transform: translateX(0);}
+}
+
+@keyframes Slide-from-left {
+    from {transform: translateX(-100%);}
+    to {transform: translateX(0);}
+}
+
+@keyframes Slide-from-up {    
+    from {transform: translateY(-100%);}
+    to {transform: translateX(0);}
+}
+
+@keyframes Grow-up {
+    from {transform: scale(0);}
+    to {transform: scale(1);}    
+}
+
+@keyframes Fade {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+
+.Detail-arrow-left {
+    background-image: url('../../../Assets/Arrow-left.svg');
+}
+
+.Detail-arrow-left:hover {
+    background-image: url('../../../Assets/Arrow-left-f.svg');
+}
+
+.Detail-arrow-right {
+    background-image: url('../../../Assets/Arrow-right.svg');
+}
+
+.Detail-arrow-right:hover {
+    background-image: url('../../../Assets/Arrow-right-f.svg');
+}
+
+.Detail-cross {
+    background-image: url('../../../Assets/Crossmark.svg');
+}
+
+.Detail-cross:hover {
+    background-image: url('../../../Assets/Crossmark-f.svg');
+}

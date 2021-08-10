@@ -11,6 +11,7 @@ import TractorTruck from '../../../Assets/Gallery/tractor_truck.jpg'
 import FogTruck from '../../../Assets/Gallery/fog_truck.jpg'
 import AutumnTruck from '../../../Assets/Gallery/autumn_truck.jpg'
 import TankTruck from '../../../Assets/Gallery/tank_truck.jpg'
+import DetailView from './DetailView'
 
 const imagesBG = [
     FieldTruck, FlagTruck, RoadTruck, GravelTruck, BehindTreeTruck, SunsetTruck, TractorTruck, FogTruck, AutumnTruck, TankTruck
@@ -33,6 +34,40 @@ const styles = {
 }
 
 class Gallery extends React.Component {
+    constructor(props) {
+        super(props)
+        this.state = {
+            detailView: false,
+            viewIndex: 0
+        }
+        this.changeToDetail = this.changeToDetail.bind(this)
+        this.goNext = this.goNext.bind(this)
+        this.goBack = this.goBack.bind(this)
+    }
+
+    changeToDetail(index = 0) {
+        this.setState((prev) => 
+            ({
+                detailView: !prev.detailView,
+                viewIndex: index
+            }))
+    }
+
+    goNext() {
+        this.setState(prev => 
+            ({
+                ...prev,
+                viewIndex: prev.viewIndex % (imagesBG.length - 1) === 0 && prev.viewIndex !== 0 ? 0 : prev.viewIndex + 1
+            }))
+    }
+
+    goBack() {
+        this.setState(prev => ({
+            ...prev,
+            viewIndex: prev.viewIndex === 0 ? imagesBG.length - 1 : prev.viewIndex - 1
+        }))
+    }
+
     render() {
         const getDivision = (imgsArray) => {
             let newArray = [];
@@ -51,26 +86,32 @@ class Gallery extends React.Component {
                         if (rndmNmr === 1) {
                             arrOfDims.push({
                                 width: '100%',
-                                height: `${height * 2}%`
+                                height: `${height * 2}%`,
+                                animation: 'Grow-up 1s ease forwards'
                             })
                         }
                         if (rndmNmr === 2) {
                             let coef = Math.ceil(Math.random() * 30);
                             let widthOfActualImage = j === 0 ? 35 + coef : actualRowWidth;
+                            let animationOfActImg = j === 0 ? 'Slide-from-left 1s ease forwards' : 'Slide-from-right 1s ease forwards';
                             arrOfDims.push({
                                 width: `${widthOfActualImage}%`,
-                                height: `${height}%`
+                                height: `${height}%`,
+                                animation: animationOfActImg
                             })
                             actualRowWidth -= widthOfActualImage;
                         }
                         if (rndmNmr === 3) {
                             let coef = Math.ceil(Math.random() * 15);
                             let widthOfActualImage = j === 0 ? 25 + coef : j === 1 ? 25 + coef : actualRowWidth;
+                            let animationOfActImg = j === 0 ? 'Slide-from-left 1s ease forwards' : j === 1 ? 'Grow-up 1s ease forwards' : 'Slide-from-right 1s ease forwards';
                             arrOfDims.push({
                                 width: `${widthOfActualImage}%`,
-                                height: `${height}%`
+                                height: `${height}%`,
+                                animation: animationOfActImg
                             })
                             actualRowWidth -= widthOfActualImage;
+                            console.log(animationOfActImg)
                         }
 
                     }
@@ -92,10 +133,11 @@ class Gallery extends React.Component {
             }
             if (rowsNmr >= 2) {
                 newArray = getDimensions(imgsArray, rowsNmr).map((item, index) => {
-                    return {                        
+                    return {
                         imageSrc: imgsArray[index],
                         height: item.height,
-                        width: item.width
+                        width: item.width,
+                        animation: item.animation
                     }
                 })
             }
@@ -103,16 +145,17 @@ class Gallery extends React.Component {
             return newArray;
         }
 
-
-
         return (
             <div className="All-gallery" style={styles.outerContainerStyles}>
                 <div style={styles.innerContainerStyles}>
                     {
-                        getDivision(imagesBG).map((photo, index) => {
-                            console.log(index)
-                            return <Photo width={photo.width} height={photo.height} key={index} imageBG={photo.imageSrc} />
-                        })
+                        this.state.detailView ?
+                            <DetailView goNext={this.goNext} goBack={this.goBack} imageSrc={imagesBG[this.state.viewIndex]} changeToDetail={this.changeToDetail} />
+                            :
+                            getDivision(imagesBG).map((photo, index) => {
+                                return <Photo thisIndex={index} changeToDetail={this.changeToDetail} width={photo.width}
+                                    height={photo.height} animation={photo.animation} key={index} imageBG={photo.imageSrc} />
+                            })
                     }
                 </div>
             </div>
