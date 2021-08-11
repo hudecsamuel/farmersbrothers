@@ -31,7 +31,6 @@ Udělej to pls jako grid, to bude nejpřesnější ;) - jinak písmo jsem dal re
     letter-spacing: 0.9vh;
 }
 
-
 @media screen and (max-width: 100vh) {
     .Shit {
         position: absolute;
@@ -116,29 +115,31 @@ footer p {
 }
 
 .insta {
-    background: url("../../Assets/Instagram.svg");
+    background-image: url("../../Assets/Instagram.svg");
 }
 
 .pho {
-    background: url("../../Assets/Phone.svg");
+    background-image: url("../../Assets/Phone.svg");
 }
 
-.insta:hover {
-    background: url("../../Assets/Instagram-filled.svg");
+@media screen and (min-width: 100vh) {
+    .insta:hover {
+        background-image: url("../../Assets/Instagram-filled.svg");
+    }
+
+    .pho:hover {
+        background-image: url("../../Assets/Phone-filled.svg");
+    }
 }
 
-.pho:hover {
-    background: url("../../Assets/Phone-filled.svg");
-}
+@media screen and (max-width: 100vh) {
+    .insta:active {
+        background-image: url("../../Assets/Instagram-filled.svg");
+    }
 
-.insta:hover,
-.pho:hover {
-    height: 4.5vh;
-    width: 4.5vh;
-    background-repeat: no-repeat;
-    background-size: cover;
-    position: center;
-    margin-right: 5%;
+    .pho:active {
+        background-image: url("../../Assets/Phone-filled.svg");
+    }
 }
 
 .insta,
@@ -167,6 +168,7 @@ footer p {
     font-weight: 600;
 }
 
+.phone a,
 .instagram a {
     display: flex;
     width: 100%;

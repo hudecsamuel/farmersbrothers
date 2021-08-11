@@ -12,6 +12,21 @@
     transform: scale(1.15);
 }
 
+@media screen and (max-width: 100vh) {
+    .Cover-photo-contact {
+        cursor: none;
+        animation: none;
+        transform: none;
+        background-position-y: none;
+        background-size: stretch;
+        background-position: center;
+        width: 100%;
+        height: 32vh;
+        top: 10vh;
+        z-index: 1;
+    }
+}
+
 .Contact-big-container {
     position: absolute;
     bottom: 0;
@@ -32,6 +47,19 @@
     animation: Slide-up 1s ease 0.2s 1 normal forwards;
     transform: translateY(60vh);
 }
+
+@media screen and (max-width: 100vh) {
+    .Contact-big-container {
+        animation: none;
+        transform: none;
+        position: relative;
+        top: 40vh;
+        height: 100%;
+        grid-template-rows: 1fr 2fr 1.5fr 1.5fr 1.5fr 1.5fr 1.5fr 5fr 6fr;
+        grid-template-columns: 1fr;
+    }
+}
+
 .Contact-big-container p, 
 .Contact-big-container h4 {
     word-break: break-all;
@@ -62,6 +90,13 @@
     justify-content: center;
 }
 
+@media screen and (max-width: 100vh) {
+    .Contact-big-container div {
+        grid-column: 1;
+        width: 70%;
+    }
+}
+
 .Contact-big-container div p {
     font-size: 2vh;
     align-self: center;
@@ -86,6 +121,13 @@
     align-self: flex-end;
 }
 
+@media screen and (max-width: 100vh) {
+    .Contact-heading {
+        grid-row: auto;
+        grid-column: 1;
+    }
+}
+
 .Contact-heading::before {
     content: "";
     position: absolute;
@@ -106,6 +148,15 @@
     align-self: center;
 }
 
+@media screen and (max-width: 100vh) {
+    .Contact-description {
+        margin-top: 3vh;
+        grid-row: auto;
+        grid-column: 1;
+        font-size: 3vh;
+    }
+}
+
 .Second-div {
     border-left: 0.3vh solid white;
 }
@@ -115,10 +166,33 @@
     border-right: 0.3vh solid white;
 }
 
+@media screen and (max-width: 100vh) {
+    .Second-div {
+        border-top: 0.3vh solid white;
+        border-left: none;
+    }
+    
+    .Third-div {
+        border-top: 0.3vh solid white;
+        border-bottom: 0.3vh solid white;
+        border-left: none;
+        border-right: none;
+    }
+}
+
 .Contact-big-container .Map {
     grid-column: 6 / span 5;
     grid-row: 4;
     position: static;
+}
+
+@media screen and (max-width: 100vh) {
+    .Contact-big-container .Map {
+        margin: 0;
+        grid-row: auto;
+        grid-column: 1;
+        width: 100%;
+    }
 }
 
 .Contact-big-container .Map p {
@@ -126,6 +200,15 @@
     color: var(--main-yellow);
     margin: 2.5vh 0 2vh 0;
     letter-spacing: 0;
+}
+
+@media screen and (max-width: 100vh) {
+    .Contact-big-container .Map p {
+        font-style: normal;
+        font-size: 2.5vh;
+        text-decoration: underline;
+        margin: 5vh 0 0 0;
+    }
 }
 
 .Contact-big-container .Map-image {
@@ -140,14 +223,24 @@
     background-color: black;
 }
 
-.Contact-big-container .Map-image:active {
-    border: 0.5vh solid var(--main-yellow);
-    position: absolute;
-    padding: 1vh;
-    margin: 0;
-    height: calc(100% - 3vh);
-    width: calc(100% - 3vh);
-    right: 0;
-    bottom: 0;
-    z-index: 1;
+@media screen and (max-width: 100vh) {
+    .Contact-big-container .Map-image {
+        height: 95%;
+        width: 95%;
+        cursor: unset;
+    }
+}
+
+@media screen and (min-width: 100vh) {
+    .Contact-big-container .Map-image:active {
+        border: 0.5vh solid var(--main-yellow);
+        position: absolute;
+        padding: 1vh;
+        margin: 0;
+        height: calc(100% - 3vh);
+        width: calc(100% - 3vh);
+        right: 0;
+        bottom: 0;
+        z-index: 1;
+    }
 }

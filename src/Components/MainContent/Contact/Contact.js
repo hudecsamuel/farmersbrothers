@@ -46,7 +46,7 @@ class Contact extends React.Component {
                     }, 2000);
                     console.log('FAILED...', error);
                 });
-        }        
+        }
         e.target.reset();
     }
 

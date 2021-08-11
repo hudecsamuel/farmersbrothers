@@ -5,10 +5,8 @@ import Price from './Price/Price';
 import Gallery from './Gallery/Gallery';
 
 const uppermostStyles = {
-        position: 'fixed',
-        height: '100%',
         backgroundColor:'grey',
-        overflow: 'hidden'
+        height: '100%'
 }
 class MainContent extends React.Component {
     chooseComponent(choice) {
@@ -18,7 +16,7 @@ class MainContent extends React.Component {
             case 2:
                 return <Price />;
             case 3:
-                return <Gallery />;
+                return <Gallery layoutAndDevice={this.props.layoutAndDevice} />;
             case 4:
                 return <Contact />;
             default:
@@ -28,8 +26,12 @@ class MainContent extends React.Component {
 
     render() {
         const layoutAndDevice = this.props.layoutAndDevice;
+        const styles = {...uppermostStyles, 
+            overflow: layoutAndDevice === 'MOBILE' ? 'scroll' : 'hidden', 
+            position: layoutAndDevice === 'MOBILE' ? 'absolute' : 'fixed'
+        }
         return (
-            <div style={layoutAndDevice === 'PC' ? {...uppermostStyles, width: 'calc(100% - 50vh)', left: '50vh'} : {...uppermostStyles, width: '100%', left: 0} }>
+            <div className='Main-content-biggest-div' style={layoutAndDevice === 'PC' ? {...styles, width: 'calc(100% - 50vh)', left: '50vh'} : {...styles, width: '100%', left: 0} }>
                 {this.chooseComponent(this.props.choice)}
             </div>
         )

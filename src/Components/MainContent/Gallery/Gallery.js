@@ -23,7 +23,8 @@ const styles = {
         padding: '1vw',
         backgroundColor: 'var(--main-black)',
         width: 'calc(100% - 2vw)',
-        height: 'calc(100% - 2vw)'
+        height: 'calc(100% - 2vw)',
+        position: 'relative'
     },
     innerContainerStyles: {
         height: '100%',
@@ -145,16 +146,17 @@ class Gallery extends React.Component {
     }
 
     render() {
+        const isLayDevMobile = this.props.layoutAndDevice === 'MOBILE'
         return (
-            <div className="All-gallery" style={styles.outerContainerStyles}>
+            <div className="All-gallery" style={{...styles.outerContainerStyles, top: isLayDevMobile ? '10vh' : '0'}}>
                 <div style={styles.innerContainerStyles}>
                     {
                         this.state.detailView ?
-                            <DetailView goNext={this.goNext} goBack={this.goBack} imageSrc={imagesBG[this.state.viewIndex]} changeToDetail={this.changeToDetail} />
+                            <DetailView layoutAndDevice={this.props.layoutAndDevice} goNext={this.goNext} goBack={this.goBack} imageSrc={imagesBG[this.state.viewIndex]} changeToDetail={this.changeToDetail} />
                             :
                             this.renderedArray.map((photo, index) => {
-                                return <Photo thisIndex={index} changeToDetail={this.changeToDetail} width={photo.width}
-                                    height={photo.height} animation={photo.animation} key={index} imageBG={photo.imageSrc} />
+                                return <Photo thisIndex={index} changeToDetail={this.changeToDetail} width={isLayDevMobile ? '100%' : photo.width}
+                                    height={isLayDevMobile ? '30%' : photo.height} animation={photo.animation} key={index} imageBG={photo.imageSrc} />
                             })
                     }
                 </div>

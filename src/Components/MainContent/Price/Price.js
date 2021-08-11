@@ -59,7 +59,7 @@ function Price() {
 
 
   return (
-    <div>
+    <div className='Biggest-price-div'>
       <div className="Cover-photo-price"></div>
       <div className="under-Image">
         <h1 className="Contact-heading">CENÍK</h1>

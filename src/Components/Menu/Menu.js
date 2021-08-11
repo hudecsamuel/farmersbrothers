@@ -45,9 +45,9 @@ class Menu extends React.Component {
   }
 
   render() {
-    const rightBorder = this.textChoice === 'GALERIE' ? { borderRight: '0.1vh solid var(--main-black)' } : { borderRight: '0.1vh solid var(--main-yellow)' }
     const layoutAndDevice = this.props.layoutAndDevice;
     const isMenuDisplayed = this.props.isMenuDisplayed;
+    const rightBorder = this.textChoice === 'GALERIE' && layoutAndDevice === 'PC' ? { borderRight: '0.1vh solid var(--main-black)' } : { borderRight: '0.1vh solid var(--main-yellow)' }
     console.log(layoutAndDevice)
     return (
       <div>
@@ -61,7 +61,6 @@ class Menu extends React.Component {
           <Hamburger layoutAndDevice={layoutAndDevice} isMenuDisplayed={isMenuDisplayed} />
         </div>}
         <div className="Menu" style={layoutAndDevice === 'MOBILE' ? {
-          ...rightBorder,
           animation: !isMenuDisplayed ? 'Slide-mobile-menu-right 0.5s ease forwards' : 'Slide-mobile-menu-left 0.5s ease forwards'
         } : {
           ...rightBorder,
@@ -85,10 +84,12 @@ class Menu extends React.Component {
               </a>
             </div>
             <div className="phone">
-              <div className="pho"></div>
-              <div className="pho-text">
-                <p>+420 606 021 579</p>
-              </div>
+              <a href="tel: 722440225" target='_blank' rel="noreferrer">
+                <div className="pho"></div>
+                <div className="pho-text">
+                  <p>+420 606 021 579</p>
+                </div>
+              </a>
             </div>
           </footer>
         </div>

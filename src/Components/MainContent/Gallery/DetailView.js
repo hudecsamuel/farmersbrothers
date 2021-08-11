@@ -6,8 +6,6 @@ const styles = {
         display: 'flex',
         alignSelf: 'center',
         justifySelf: 'center',
-        width: '100%',
-        height: '100%',
         animation: 'Fade 2s ease forwards',
         justifyContent: 'space-between',
         backgroundRepeat: 'no-repeat',
@@ -32,13 +30,12 @@ const styles = {
         cursor: 'pointer',
         height: '5vh',
         width: '5vh',
-        top: '2vh',
-        right: '3vh',
         position: 'absolute'
     }
 }
 
 const DetailView = (props) => {
+    const isLayDevMobile = props.layoutAndDevice === 'MOBILE'
     const imageSrc = props.imageSrc
     const goNext = props.goNext
     const goBack = props.goBack
@@ -49,7 +46,13 @@ const DetailView = (props) => {
     return (
         <div style={{
             ...styles.mainDivStyles,
-            backgroundImage: `url(${imageSrc})`
+            backgroundImage: `url(${imageSrc})`,
+            height: '100%',
+            position: isLayDevMobile ? 'fixed' : '',
+            top: isLayDevMobile ? '0' : '',
+            bottom: isLayDevMobile ? '0' : '',
+            margin: isLayDevMobile ? 'auto 0' : '',
+            width: isLayDevMobile ? 'calc(100% - 2vw)' : '100%'
         }}>
             <div onClick={goBack} className="Detail-arrow-left" style={{
                 ...styles.arrowStyles
@@ -58,7 +61,9 @@ const DetailView = (props) => {
                 ...styles.arrowStyles
             }}></div>
             <div className="Detail-cross" onClick={handleCrossClick} style={{
-                ...styles.crossStyles
+                ...styles.crossStyles,
+                top: isLayDevMobile ? '12vh' : '2vh',
+                right: isLayDevMobile ? '1vh' : '3vh'
             }}></div>
         </div>
     )

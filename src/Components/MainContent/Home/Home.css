@@ -6,3 +6,49 @@
     background-size: cover;
     background-position: center;
 }
+
+.Home-footer {
+    display: none;
+}
+
+@media screen and (max-width: 100vh) {
+    .Home-footer {
+        display: block;
+        position: fixed;
+        height: 10vh;
+        bottom: 0;
+        width: calc(100% - 10vh);
+        z-index: 2;
+        background-color: var(--main-black);
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        padding: 0 5vh;
+    }
+}
+
+.Home-footer .instag,
+.Home-footer .phon {
+    height: 6vh;
+    width: 6vh;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    cursor: pointer;
+}
+
+.Home-footer .instag {
+    background-image: url("../../../Assets/Instagram.svg");
+}
+
+.Home-footer .phon {
+    background-image: url("../../../Assets/Phone.svg");
+}
+
+.Home-footer .instag:active {
+    background-image: url("../../../Assets/Instagram-filled.svg");
+}
+
+.Home-footer .phon:active {
+    background-image: url("../../../Assets/Phone-filled.svg");
+}

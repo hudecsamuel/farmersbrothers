@@ -12,6 +12,25 @@
     background-position-y: -20vh;
 }
 
+@media screen and (max-width: 100vh) {
+    .Cover-photo-price {
+        cursor: none;
+        animation: none;
+        transform: none;
+        background-position-y: none;
+        background-size: stretch;
+        background-position: center;
+        width: 100%;
+        height: 32vh;
+        top: 10vh;
+        z-index: 1;
+    }
+
+    .Biggest-price-div {
+        height: fit-content;
+    }
+}
+
 /* POD OBRÁZKEM */
 
 .under-Image {
@@ -34,6 +53,17 @@
     animation: Slide-up-price 1s ease 0.2s 1 normal forwards;
     transform: translateY(60vh);
     text-align: center;
+}
+
+@media screen and (max-width: 100vh) {
+    .under-Image {
+        animation: none;
+        transform: none;
+        position: relative;
+        top: 40vh;
+        height: 100%;
+        grid-template-rows: 10vh 5vh 50vh auto 15vh;
+    }
 }
 
 @keyframes Slide-up-price {
@@ -75,6 +105,13 @@
     padding: 0.5vh;
 }
 
+@media screen and (max-width: 100vh) {
+    .Main-div {
+        grid-template-columns: 1fr;
+        grid-template-rows: 40vh auto;
+    }
+}
+
 .left {
     display: grid;
     flex-direction: column;
@@ -86,6 +123,16 @@
 .right {
     border-left: solid 0.2vh var(--main-yellow);
     display: flex;
+}
+
+@media screen and (max-width: 100vh) {
+    .right {
+        border-left: none;
+        border-top: solid 0.2vh var(--main-yellow);
+        padding: 0.5vh 0.5vh 0 0;
+        align-items: center;
+        justify-content: center;
+    }
 }
 
 .table {
@@ -122,7 +169,7 @@
     border-right: 0;
 }
 
-.table table td {    
+.table table td {
     border: solid 0.1vh var(--main-yellow);
     vertical-align: middle;
     padding: 0.7vh;
@@ -157,7 +204,7 @@
 }
 
 .roleta .arrow {
-    background: url('/src/Assets/Arrow.svg');
+    background: url("/src/Assets/Arrow.svg");
     height: 2.3vh;
     width: 3.6vh;
     background-repeat: no-repeat;
@@ -170,13 +217,23 @@
 }
 
 @keyframes Rotate {
-    from {transform: rotate(0);}
-    to {transform: rotate(180deg);}    
+    from {
+        transform: rotate(0);
+    }
+    to {
+        transform: rotate(180deg);
+    }
 }
 
 @keyframes Scale-up {
-    from {transform: scale(0); opacity: 0;}
-    to {transform: scale(1); opacity: 1;}    
+    from {
+        transform: scale(0);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
 }
 
 #dd {
@@ -250,7 +307,6 @@
 }
 
 .Left-inner-div {
-
 }
 
 .parametr div {
@@ -264,7 +320,7 @@
 }
 
 .plus {
-    background-image: url('../../../Assets/Plus.svg');
+    background-image: url("../../../Assets/Plus.svg");
     height: 2.2vh;
     width: 2.2vh;
     background-repeat: no-repeat;
@@ -274,7 +330,7 @@
     display: inline-block;
 }
 .minus {
-    background-image: url('../../../Assets/Minus.svg');
+    background-image: url("../../../Assets/Minus.svg");
     height: 2.2vh;
     width: 2.2vh;
     background-repeat: no-repeat;
@@ -318,6 +374,12 @@
     justify-content: space-between;
     align-items: center;
     margin: 1vh 5% 0 5%;
+}
+
+@media screen and (max-width: 100vh) {
+    .result {
+        margin: 1vh 5% 1vh 5%;
+    }
 }
 
 .result span {
