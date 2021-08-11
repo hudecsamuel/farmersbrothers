@@ -24,6 +24,7 @@ function Sklizeň() {
         if (isNaN(newDays) || !newDays) {
             return obrátka((prev) => prev)
         } 
+        if (newDays < 1) return obrátka(1)
         return obrátka(parseInt(newDays))
     } 
 

@@ -82,13 +82,14 @@ function Cisterna() {
         if (isNaN(newLength) || !newLength) {
             return obrátka((prev) => prev)
         } 
+        if (newLength < 1) return obrátka(1)
         return obrátka(parseInt(newLength))
     } 
 
     const plusLength = () => obrátka((prev) => prev + 1);
 
     const minusLength = () => {
-        if (délka <= 0) {
+        if (délka <= 1) {
             return
         }
         return obrátka((prev) => prev - 1)
