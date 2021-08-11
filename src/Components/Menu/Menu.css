@@ -14,11 +14,32 @@ Udělej to pls jako grid, to bude nejpřesnější ;) - jinak písmo jsem dal re
     z-index: 3;
 }
 
+@media screen and (max-width: 100vh) {
+    .Menu {
+        left: unset;
+        right: 0;
+        bottom: 0;
+        max-width: 90%;
+        background-color: #111;
+    }
+}
+
 .Shit {
     color: #a57655;
     font-size: 1.3vh;
     font-family: Libre Backerville;
     letter-spacing: 0.9vh;
+}
+
+
+@media screen and (max-width: 100vh) {
+    .Shit {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        margin: 25vh auto;
+    }
 }
 
 .Big-logo {
@@ -34,6 +55,16 @@ Udělej to pls jako grid, to bude nejpřesnější ;) - jinak písmo jsem dal re
     .Big-logo {
         height: 12%;
         margin: 20% auto 8% auto;
+    }
+}
+
+@media screen and (max-width: 100vh) {
+    .Big-logo {
+        position: absolute;
+        top: 10vh;
+        left: 0;
+        right: 0;
+        margin: 0 auto;
     }
 }
 
@@ -56,8 +87,28 @@ nav {
     justify-content: space-around;
 }
 
+@media screen and (max-width: 100vh) {
+    nav {
+        position: absolute;
+        bottom: 0;
+        top: 0;
+        left: 0;
+        right: 0;
+        margin: auto auto;
+    }
+}
+
 footer {
     margin: 35% 10% 5% 10%;
+}
+
+@media screen and (max-width: 100vh) {
+    footer {
+        position: absolute;
+        bottom: 5vh;
+        width: 100%;
+        margin: 0;
+    }
 }
 
 footer p {
@@ -179,8 +230,8 @@ footer p {
 .Upper-bar,
 .Middle-bar,
 .Lower-bar {
-    width: 100%;
-    height: 18%;
+    width: calc(100% - 0.2vh);
+    height: calc(18% - 0.2vh);
     background-color: var(--main-yellow);
 }
 
@@ -205,4 +256,128 @@ footer p {
 
 /* MOBILE */
 #Mobile-haburger-bar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 10vh;
+    z-index: 3;
+    background-color: var(--main-black);
+}
+
+.Big-logo-mobile {
+    margin: 1vh 2vh;
+    height: 8vh;
+    width: auto;
+    background-image: url("../../Assets/BIG_LOGO.svg");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: left;
+}
+
+.Mobile-hamburger-container {
+    position: fixed;
+    height: 5vh;
+    width: 5vh;
+    z-index: 4;
+    top: 2.1vh;
+    right: 2.1vh;
+}
+
+/* ANIMATIONS */
+/** HAMBURGER ANIMATIONS **/
+@keyframes Decline {
+    from {
+        transform: rotate(0);
+    }
+    to {
+        transform: rotate(45deg) translateY(1.4vh) translateX(1.6vh);
+    }
+}
+
+@keyframes Reverse-decline {
+    from {
+        transform: rotate(45deg) translateY(1.4vh) translateX(1.6vh);
+    }
+    to {
+        transform: rotate(0);
+    }
+}
+
+@keyframes Go-right {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(80%);
+        opacity: 0;
+    }
+}
+
+@keyframes Go-left {
+    from {
+        transform: translateX(80%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+    }
+}
+
+@keyframes Incline {
+    from {
+        transform: rotate(0);
+    }
+    to {
+        transform: rotate(-45deg) translateY(-1.4vh) translateX(1.6vh);
+    }
+}
+
+@keyframes Reverse-incline {
+    from {
+        transform: rotate(-45deg) translateY(-1.4vh) translateX(1.6vh);
+    }
+    to {
+        transform: rotate(0);
+    }
+}
+
+/** MENU ANIMATIONS **/
+@keyframes Slide-menu-right {
+    from {
+        transform: translateX(-100%);
+    }
+    to {
+        display: block;
+        transform: translateX(0);
+    }
+}
+
+@keyframes Slide-menu-left {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(-100%);
+        display: none;
+    }
+}
+
+@keyframes Slide-mobile-menu-left {
+    from {
+        transform: translateX(100%);
+    }
+    to {
+        display: block;
+        transform: translateX(0);
+    }
+}
+
+@keyframes Slide-mobile-menu-right {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(100%);
+        display: none;
+    }
 }

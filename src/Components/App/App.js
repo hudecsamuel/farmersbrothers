@@ -12,31 +12,34 @@ class App extends React.Component {
     }
     this.changeMenuChoice = this.changeMenuChoice.bind(this);
     this.toggleMenuVisibility = this.toggleMenuVisibility.bind(this);
+    this.adjustWithScreen = this.adjustWithScreen.bind(this);
   }
 
   componentDidMount() {
-    window.addEventListener('resize', () => {
-      if (matchMedia('screen and (min-width: 165vh)').matches) {
-        this.setState({
-          layoutAndDevice: 'PC',
-          isMenuDisplayed: true
-        })
-        return console.log('Nad 165vh: ' + this.state.layoutAndDevice)
-      }
-      if (matchMedia('screen and (min-width: 100vh)').matches) {
-        this.setState({
-          layoutAndDevice: 'TABLET',
-          isMenuDisplayed: false
-        })
-        return console.log('Mezi 165vh a 100vh: ' + this.state.layoutAndDevice)
-      }
+    window.addEventListener('resize', this.adjustWithScreen)
+    this.adjustWithScreen()
+  }
+
+  adjustWithScreen() {
+    if (matchMedia('screen and (min-width: 165vh)').matches) {
       this.setState({
-        layoutAndDevice: 'MOBILE',
+        layoutAndDevice: 'PC',
+        isMenuDisplayed: true
+      })
+      return console.log('Nad 165vh: ' + this.state.layoutAndDevice)
+    }
+    if (matchMedia('screen and (min-width: 100vh)').matches) {
+      this.setState({
+        layoutAndDevice: 'TABLET',
         isMenuDisplayed: false
       })
-      return console.log('Pod 100vh: ' + this.state.layoutAndDevice)
-      
+      return console.log('Mezi 165vh a 100vh: ' + this.state.layoutAndDevice)
+    }
+    this.setState({
+      layoutAndDevice: 'MOBILE',
+      isMenuDisplayed: false
     })
+    return console.log('Pod 100vh: ' + this.state.layoutAndDevice)
   }
 
   changeMenuChoice(newChoice) {

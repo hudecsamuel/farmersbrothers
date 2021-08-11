@@ -12,6 +12,7 @@ class Menu extends React.Component {
   }
 
   handleClick(e) {
+    const layDev = this.props.layoutAndDevice
     let choice;
     const elText = e.target.innerText;
     switch (elText) {
@@ -36,6 +37,7 @@ class Menu extends React.Component {
         this.textChoice = 'DOMŮ';
     }
     this.props.onSelect(choice);
+    if (layDev === 'TABLET' || layDev === 'MOBILE') this.handleToggleVisibility()
   }
 
   handleToggleVisibility() {
@@ -50,12 +52,21 @@ class Menu extends React.Component {
     return (
       <div>
         {layoutAndDevice === 'TABLET' && <div onClick={this.handleToggleVisibility} id='Tablet-hamburger-button'>
-          <Hamburger />
+          <Hamburger layoutAndDevice={layoutAndDevice} isMenuDisplayed={isMenuDisplayed} />
         </div>}
         {layoutAndDevice === 'MOBILE' && <div id='Mobile-haburger-bar'>
-          <Hamburger />
+          <div className="Big-logo-mobile"></div>
         </div>}
-        <div className="Menu" style={{ ...rightBorder, display: isMenuDisplayed ? 'block' : 'none' }}>
+        {layoutAndDevice === 'MOBILE' && <div onClick={this.handleToggleVisibility} className='Mobile-hamburger-container'>
+          <Hamburger layoutAndDevice={layoutAndDevice} isMenuDisplayed={isMenuDisplayed} />
+        </div>}
+        <div className="Menu" style={layoutAndDevice === 'MOBILE' ? {
+          ...rightBorder,
+          animation: !isMenuDisplayed ? 'Slide-mobile-menu-right 0.5s ease forwards' : 'Slide-mobile-menu-left 0.5s ease forwards'
+        } : {
+          ...rightBorder,
+          animation: !isMenuDisplayed ? 'Slide-menu-left 0.5s ease forwards' : 'Slide-menu-right 0.5s ease forwards'
+        }}>
           <div className="Big-logo"></div>
           <p className="Shit"><span>→ </span>  SHIT HAPPENS  <span> ←</span></p>
           <nav>
