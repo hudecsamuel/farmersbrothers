@@ -12,7 +12,6 @@
     background-position-y: -20vh;
 }
 
-
 /* POD OBRÁZKEM */
 
 .under-Image {
@@ -38,16 +37,23 @@
 }
 
 @keyframes Slide-up-price {
-    0% {}
-    100% {transform: translateY(0);}
+    0% {
+    }
+    100% {
+        transform: translateY(0);
+    }
 }
 
 @keyframes Slide-up-cover-price {
-    0% {}
-    100% {transform: scale(1); background-position-y: -55vh;}
+    0% {
+    }
+    100% {
+        transform: scale(1);
+        background-position-y: -55vh;
+    }
 }
 
-.Contact-heading{
+.Contact-heading {
     text-align: center;
     position: relative;
     grid-row: 1;
@@ -59,216 +65,271 @@
     align-self: flex-end;
 }
 
-.Main-div{
+.Main-div {
     border: solid 0.2vh var(--main-yellow);
-    border-radius: 2vh;
-    grid-column: 1 / span 10 ;
-    grid-row:3 / 5;
+    border-radius: 1vh;
+    grid-column: 1 / span 10;
+    grid-row: 3 / 5;
     display: grid;
     grid-template-columns: 1fr 1fr;
+    padding: 0.5vh;
 }
 
-.left{
-    display: flex;
+.left {
+    display: grid;
     flex-direction: column;
-    align-items: stretch;
+    padding: 0.5vh 0.5vh 0.5vh 0;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1.2fr 5fr 2.5fr;
 }
 
-.right{
+.right {
     border-left: solid 0.2vh var(--main-yellow);
     display: flex;
 }
 
-.table{
+.table {
     width: 100%;
     display: flex;
+    font-size: 1.8vh;
+    font-weight: normal;
 }
 
-th,
-td{
-    vertical-align: middle;
+.table table {
+    margin-left: 0.5vh;
+    line-height: 2.5vh;
+    font-weight: bold;
+}
+
+.Tank-right-p {
+    line-height: 2.5vh;
+    font-weight: bold;
+}
+
+.table table tr:first-child td {
+    border-top: 0;
+}
+
+.table table tr td:first-child {
+    border-left: 0;
+}
+
+.table table tr:last-child td {
+    border-bottom: 0;
+}
+
+.table table tr td:last-child {
+    border-right: 0;
+}
+
+.table table td {    
     border: solid 0.1vh var(--main-yellow);
+    vertical-align: middle;
     padding: 0.7vh;
 }
 
-.right p{
-    
-   margin: auto 2vh auto;
-   text-align: left;
+.right p {
+    margin: auto 2vh auto;
+    text-align: left;
 }
-
 
 /* KALKULAČKA */
 
-
-.calc{
+.calc {
     display: flex;
     flex-direction: column;
-    border-bottom:  solid 0.2vh var(--main-yellow);
+    border-bottom: solid 0.2vh var(--main-yellow);
     flex-grow: 4;
 }
 
-.výběr{
-    display: grid;
-    grid-template-rows: 1fr 2fr 1fr;
-    grid-template-columns: 1fr 13fr 1fr;
-}
-.roleta{
+.roleta {
     position: relative;
     border: solid 0.2vh var(--main-yellow);
-    grid-row: 2;
-    grid-column: 2;
-    display: flex;
-    justify-content: center;
-    align-content: center;
-}
-.roleta span{
+    width: 90%;
+    height: 4vh;
     font-weight: bold;
     font-size: 2vh;
     color: var(--main-yellow);
-    flex-grow: 2;
-}
-#dd{
-    display: table;
-    height: fit-content;
-    position: absolute;
-    width: 100%;
-    top: 100%;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-#dd div{
-    position: top;
-    border: solid 0.2vh var(--main-yellow);
+.roleta .arrow {
+    background: url('/src/Assets/Arrow.svg');
+    height: 2.3vh;
+    width: 3.6vh;
+    background-repeat: no-repeat;
+    background-size: contain;
+    position: absolute;
+    right: 1vh;
+    top: 0;
+    bottom: 0;
+    margin: auto 0;
+}
+
+@keyframes Rotate {
+    from {transform: rotate(0);}
+    to {transform: rotate(180deg);}    
+}
+
+@keyframes Scale-up {
+    from {transform: scale(0); opacity: 0;}
+    to {transform: scale(1); opacity: 1;}    
+}
+
+#dd {
+    position: absolute;
+    top: calc(100% + 0.2vh);
+    width: calc(100% + 0.4vh);
+}
+
+#dd div {
+    height: 4vh;
+    border-left: solid 0.2vh var(--main-yellow);
+    border-bottom: solid 0.2vh var(--main-yellow);
+    border-right: solid 0.2vh var(--main-yellow);
     display: flex;
     flex-direction: column;
     justify-content: center;
-    height: 4vh;
     font-weight: bold;
     font-size: 2vh;
     color: var(--main-yellow);
     background-color: black;
 }
-#dd div:hover{
+#dd div:hover {
     background-color: var(--main-yellow);
     cursor: pointer;
     color: black;
 }
 
-.arrow{
-    background: url(/src/Assets/Arrow.svg);
-    height: 2.3vh;
-    width: 3.6vh;
-    background-repeat: no-repeat;
-    background-size: fill;
-    position: center;
-    cursor: pointer;
-    flex-grow: 0.1;
-}
-
-.Chosen{
-    width: 100%;
-    flex-grow: 2;
-}
-.komplet{
-    width: 100%;
-    flex-grow: 15;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-}
-.parametr{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    flex-grow: 1;
-    align-items: flex-start;
-}
-.parametr span{
-    color: var(--main-yellow);
-}
-.obrátka,
-.náklad,
-.mkm{
+.Chosen {
     display: flex;
     width: 100%;
-    justify-content: space-between;
-    align-items: baseline;
-}
-.délka,
-.objem,
-.dny,
-.hodiny{
-flex-grow: 0.17;
-}
-
-.cena{
-    flex-grow: 0.15;
-}
-.zadání-obrátka,
-.zadání-náklad{
-    display: flex;
-    flex-grow: 0.4;
     justify-content: center;
     align-items: center;
 }
-#objem{
-    margin: 0 5vh;
-}
-.přepočet{
-    flex-grow: 0.41;
+
+.komplet {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 3fr 1.5fr;
+    border-bottom: solid 0.2vh var(--main-yellow);
 }
 
-.plus{
-    background: url(../../../Assets/Plus.svg);
-    height: 2.3vh;
-    width: 2.5vh;
+.parametr {
+    margin: 0 5%;
+    font-size: 1.8vh;
+    font-weight: normal;
+    display: grid;
+    grid-template-columns: 4fr 1.5fr;
+    grid-template-rows: 1fr 1fr 1fr;
+}
+
+.Right-inner-div {
+    display: flex;
+    justify-content: space-between;
+}
+
+.Right-inner-div input {
+    width: 40%;
+    color: var(--main-yellow);
+    font-size: 2vh;
+    text-align: center;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    border-bottom: solid 0.2vh var(--main-yellow);
+}
+
+.Right-inner-div span {
+    width: 100%;
+    text-align: center;
+}
+
+.Left-inner-div {
+
+}
+
+.parametr div {
+    display: flex;
+    align-items: center;
+}
+
+.parametr span {
+    color: var(--main-yellow);
+    margin: 0;
+}
+
+.plus {
+    background-image: url('../../../Assets/Plus.svg');
+    height: 2.2vh;
+    width: 2.2vh;
     background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
     cursor: pointer;
     display: inline-block;
 }
-.minus{
-    background: url(../../../Assets/Minus.svg);
-    height: 2.3vh;
-    width: 2.5vh;
+.minus {
+    background-image: url('../../../Assets/Minus.svg');
+    height: 2.2vh;
+    width: 2.2vh;
     background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
     cursor: pointer;
     display: inline-block;
 }
 
-.tlačítko{
-    margin: 2% auto;
-    padding: 2% 4%;
+.Counting-button-div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.tlačítko {
+    border: none;
     background-color: var(--main-yellow);
     border-radius: 0.5vh;
     cursor: pointer;
+    height: 70%;
+    min-width: fit-content;
+    width: 25%;
 }
-.tlačítko span{
+.tlačítko span {
     color: black;
-    font-size: xx-large;
+    font-size: 2.5vh;
     font-weight: bold;
 }
 
 /*sklizňová doprava*/
-.wrap{
+.wrap {
     width: 100%;
     height: 100%;
     display: flex;
 }
 
-.result{
+.result {
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
-    flex-grow: 1;
+    margin: 1vh 5% 0 5%;
 }
 
-.result span:first-child{
-    color: var(--main-yellow);
-    font-size: x-large;
-    font-weight: bold;
+.result span {
+    margin: 0;
 }
-.result span:last-child{
+
+.result span:first-child {
+    color: var(--main-yellow);
+    font-size: 2vh;
+    font-weight: normal;
+}
+.result span:last-child {
     grid-column: 3;
     font-size: 4vh;
     font-weight: bold;
@@ -276,44 +337,47 @@ flex-grow: 0.17;
 }
 
 .zadání-dny,
-.zadání-hodiny{
+.zadání-hodiny {
     display: flex;
     flex-grow: 0.35;
     justify-content: center;
     align-items: center;
 }
 
-table{
+table {
     width: 100%;
     height: 100%;
     margin: auto 0;
 }
 
-
-
 @keyframes Slide-up-price {
-    0% {}
-    100% {transform: translateY(0);}
+    0% {
+    }
+    100% {
+        transform: translateY(0);
+    }
 }
 
 @keyframes Slide-up-cover-price {
-    0% {}
-    100% {transform: scale(1); background-position-y: -65vh;}
+    0% {
+    }
+    100% {
+        transform: scale(1);
+        background-position-y: -65vh;
+    }
 }
-
 
 /* POZNÁMKY */
 
-.Notes{
-    grid-column: 1 / span 10 ;
+.Notes {
+    grid-column: 1 / span 10;
     grid-row: 5 / 5;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    
 }
 
-.Notes span{
+.Notes span {
     display: flex;
     color: #fff;
     flex-direction: column;
@@ -323,20 +387,27 @@ table{
     line-height: 2.5vh;
     margin: 0;
     font-weight: bold;
+    font-size: 1.8vh;
 }
 
 @keyframes Slide-up-price {
-    0% {}
-    100% {transform: translateY(0);}
+    0% {
+    }
+    100% {
+        transform: translateY(0);
+    }
 }
 
 @keyframes Slide-up-cover-price {
-    0% {}
-    100% {transform: scale(1); background-position-y: -55vh;}
+    0% {
+    }
+    100% {
+        transform: scale(1);
+        background-position-y: -55vh;
+    }
 }
 
-
-#sub{
+#sub {
     vertical-align: super;
-    font-size: x-small;
+    font-size: 1vh;
 }

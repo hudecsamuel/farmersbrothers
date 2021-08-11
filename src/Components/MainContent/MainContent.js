@@ -3,8 +3,13 @@ import Home from './Home/Home';
 import Contact from './Contact/Contact';
 import Price from './Price/Price';
 import Gallery from './Gallery/Gallery';
-import './MainContent.css';
 
+const uppermostStyles = {
+        position: 'fixed',
+        height: '100%',
+        backgroundColor:'grey',
+        overflow: 'hidden'
+}
 class MainContent extends React.Component {
     chooseComponent(choice) {
         switch (choice) {
@@ -22,8 +27,9 @@ class MainContent extends React.Component {
     }
 
     render() {
+        const layoutAndDevice = this.props.layoutAndDevice;
         return (
-            <div className="Uppermost-container">
+            <div style={layoutAndDevice === 'PC' ? {...uppermostStyles, width: 'calc(100% - 50vh)', left: '50vh'} : {...uppermostStyles, width: '100%', left: 0} }>
                 {this.chooseComponent(this.props.choice)}
             </div>
         )

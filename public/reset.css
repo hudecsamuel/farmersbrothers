@@ -147,3 +147,7 @@ table {
   border-collapse: collapse;
   border-spacing: 0;
 }
+p {
+  font-size: 1.8vh;
+  font-weight: normal;
+}

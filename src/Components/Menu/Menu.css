@@ -11,6 +11,7 @@ Udělej to pls jako grid, to bude nejpřesnější ;) - jinak písmo jsem dal re
     left: 0;
     color: #cfb53c;
     text-align: center;
+    z-index: 3;
 }
 
 .Shit {
@@ -27,6 +28,13 @@ Udělej to pls jako grid, to bude nejpřesnější ;) - jinak písmo jsem dal re
     background-repeat: no-repeat;
     background-size: contain;
     background-position: center;
+}
+
+@media screen and (max-width: 165vh) {
+    .Big-logo {
+        height: 12%;
+        margin: 20% auto 8% auto;
+    }
 }
 
 span {
@@ -153,4 +161,48 @@ footer p {
     visibility: visible;
     left: 0;
     width: 100%;
+}
+
+/* TABLET AND MOBILE TOGETHER */
+#Hamburger {
+    width: 100%;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+}
+
+.Upper-bar,
+.Middle-bar,
+.Lower-bar {
+    width: 100%;
+    height: 18%;
+    background-color: var(--main-yellow);
+}
+
+.Upper-bar {
+}
+
+.Middle-bar {
+}
+
+.Lower-bar {
+}
+
+/* TABLET */
+#Tablet-hamburger-button {
+    position: fixed;
+    top: 3vh;
+    left: 3vh;
+    z-index: 4;
+    height: 5vh;
+    width: 5vh;
+}
+
+/* MOBILE */
+#Mobile-haburger-bar {
 }

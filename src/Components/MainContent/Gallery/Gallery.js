@@ -111,7 +111,6 @@ class Gallery extends React.Component {
                                 animation: animationOfActImg
                             })
                             actualRowWidth -= widthOfActualImage;
-                            console.log(animationOfActImg)
                         }
 
                     }

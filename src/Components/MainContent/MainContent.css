@@ -1,8 +1,0 @@
-.Uppermost-container {
-    position: fixed;
-    left: 50vh;
-    width: calc(100% - 50vh);
-    height: 100%;
-    background-color: grey;
-    overflow: hidden;
-}
