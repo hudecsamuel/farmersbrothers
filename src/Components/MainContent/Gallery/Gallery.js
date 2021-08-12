@@ -29,6 +29,7 @@ const styles = {
     innerContainerStyles: {
         height: '100%',
         overflowY: 'scroll',
+        overflowX: 'hidden',
         display: 'flex',
         flexWrap: 'wrap'
     }

@@ -6,7 +6,7 @@ import Gallery from './Gallery/Gallery';
 
 const uppermostStyles = {
         backgroundColor:'grey',
-        height: '100%'
+        height: '100%',
 }
 class MainContent extends React.Component {
     chooseComponent(choice) {
