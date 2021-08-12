@@ -13,7 +13,7 @@ class Form extends React.Component {
                 <input name="email" type="email" placeholder="@" required />
                 <input id="Hrnekmedu" name="subject" type="text" autoComplete="off" placeholder="Hrnek medu"></input>
                 <label className="Textarea-label">Zpráva</label>
-                <textarea id='Form-textarea' />
+                <textarea name="message" id='Form-textarea' />
                 <button type="submit">Odeslat</button>
             </form>
         )
