@@ -8,7 +8,7 @@ class Menu extends React.Component {
     super(props);
     this.handleClick = this.handleClick.bind(this);
     this.handleToggleVisibility = this.handleToggleVisibility.bind(this);
-    this.textChoice = '';
+    this.textChoice = 'DOMŮ';
   }
 
   handleClick(e) {
@@ -47,7 +47,9 @@ class Menu extends React.Component {
   render() {
     const layoutAndDevice = this.props.layoutAndDevice;
     const isMenuDisplayed = this.props.isMenuDisplayed;
-    const rightBorder = this.textChoice === 'GALERIE' && layoutAndDevice === 'PC' ? { borderRight: '0.1vh solid var(--main-black)' } : { borderRight: '0.1vh solid var(--main-yellow)' }
+    const rightBorder = (this.textChoice === 'GALERIE' /* For not to display yellow right border on menu in home component → || this.textChoice === 'DOMŮ' */)
+    && layoutAndDevice === 'PC' ?
+    { borderRight: '0.1vh solid var(--main-black)' } : { borderRight: '0.1vh solid var(--main-yellow)' }
     console.log(layoutAndDevice)
     return (
       <div>
@@ -62,6 +64,9 @@ class Menu extends React.Component {
         </div>}
         <div className="Menu" style={layoutAndDevice === 'MOBILE' ? {
           animation: !isMenuDisplayed ? 'Slide-mobile-menu-right 0.5s ease forwards' : 'Slide-mobile-menu-left 0.5s ease forwards'
+        } : layoutAndDevice === 'PC' ? {
+          ...rightBorder,
+          animation: 'none'
         } : {
           ...rightBorder,
           animation: !isMenuDisplayed ? 'Slide-menu-left 0.5s ease forwards' : 'Slide-menu-right 0.5s ease forwards'
