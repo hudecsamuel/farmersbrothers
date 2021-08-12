@@ -78,7 +78,7 @@ img {
 }
 
 nav {
-    margin: 20% 10% 10% 10%;
+    margin: 22% 10% 10% 10%;
     overflow: auto;
     display: flex;
     flex-direction: column;
@@ -189,6 +189,15 @@ footer p {
     letter-spacing: 0.1vh;
     font-size: 3.8vh;
     cursor: pointer;
+}
+
+@media screen and (min-width: 100vh) {
+    .Home-button,
+    .Price-button,
+    .Gallery-button,
+    .Contact-button {
+        font-size: 3vh;
+    }
 }
 
 .Home-button::before,
