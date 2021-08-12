@@ -24,7 +24,7 @@ class Contact extends React.Component {
         if (document.getElementById('Hrnekmedu').value) {
             console.log('Smůla: ' + document.getElementById('Hrnekmedu').value);
         } else {
-            emailjs.sendForm('r06ert-je-developer', 'simple-template-01', e.target, 'user_97wrQev3ZYhN9j8ECOZFE') // These credentials are gonna change
+            emailjs.sendForm('r06ert-je-developer', 'tmplt_farmers_brothers', e.target, 'user_97wrQev3ZYhN9j8ECOZFE') // These credentials are gonna change
                 .then(response => {
                     clearInterval(dotsID);
                     txtArea.style.color = 'green'
