@@ -33,14 +33,14 @@
     z-index: 2;
     border-top-left-radius: 1vh;
     border-top-right-radius: 1vh;
-    padding: 0 2.5%;
+    padding: 0 1%;
     color: white;
     background-color: black;
     display: grid;
     grid-template-columns: repeat(10, 1fr);
-    grid-template-rows: 2fr 2.5fr 2fr 12fr;
-    height: 70vh;
-    width: 95%;
+    grid-template-rows: 2fr 3fr 1.5fr 10fr;
+    height: 60vh;
+    width: 98%;
     margin: 0 auto;
     align-content: center;
     justify-content: center;
@@ -50,29 +50,37 @@
 
 @media screen and (max-width: 100vh) {
     .Contact-big-container {
+        padding: 0 2.5%;
+        width: 95%;
         animation: none;
         transform: none;
         position: relative;
         top: 40vh;
         height: 100%;
-        grid-template-rows: 1fr 2fr 1.5fr 1.5fr 1.5fr 1.5fr 1.5fr 5fr 6fr;
+        grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 5fr 6fr;
         grid-template-columns: 1fr;
     }
 }
 
-.Contact-big-container p, 
+.Contact-big-container p,
 .Contact-big-container h4 {
-    word-break: break-all;
+    word-break: unset;
 }
 
 @keyframes Slide-up {
-    0% {}
-    100% {transform: translateY(0);}
+    0% {
+    }
+    100% {
+        transform: translateY(0);
+    }
 }
 
 @keyframes Slide-up-cover {
-    0% {}
-    100% {transform: scale(1); background-position-y: -35vh;}
+    0% {
+    }
+    100% {
+        height: 42vh;
+    }
 }
 
 .Contact-big-container div {
@@ -88,6 +96,7 @@
     justify-self: center;
     align-self: center;
     justify-content: center;
+    min-width: fit-content;
 }
 
 @media screen and (max-width: 100vh) {
@@ -98,15 +107,25 @@
 }
 
 .Contact-big-container div p {
-    font-size: 2vh;
+    font-size: 1.6vh;
     align-self: center;
 }
 
 .Contact-big-container h4 {
-    font-size: 2.2vh;
+    font-size: 2vh;
     font-weight: bold;
     line-height: 1.5;
     align-self: center;
+}
+
+@media screen and (max-width: 100vh) {
+    .Contact-big-container div p {
+        font-size: 2vh;
+    }
+
+    .Contact-big-container h4 {
+        font-size: 2.2vh;
+    }
 }
 
 .Contact-heading {
@@ -153,28 +172,27 @@
         margin-top: 3vh;
         grid-row: auto;
         grid-column: 1;
-        font-size: 3vh;
     }
 }
 
 .Second-div {
-    border-left: 0.3vh solid white;
+    border-left: 0.2vh solid white;
 }
 
 .Third-div {
-    border-left: 0.3vh solid white;
-    border-right: 0.3vh solid white;
+    border-left: 0.2vh solid white;
+    border-right: 0.2vh solid white;
 }
 
 @media screen and (max-width: 100vh) {
     .Second-div {
-        border-top: 0.3vh solid white;
+        border-top: 0.2vh solid white;
         border-left: none;
     }
-    
+
     .Third-div {
-        border-top: 0.3vh solid white;
-        border-bottom: 0.3vh solid white;
+        border-top: 0.2vh solid white;
+        border-bottom: 0.2vh solid white;
         border-left: none;
         border-right: none;
     }
@@ -196,6 +214,8 @@
 }
 
 .Contact-big-container .Map p {
+    font-size: 2vh;
+    text-decoration: underline;
     font-style: italic;
     color: var(--main-yellow);
     margin: 2.5vh 0 2vh 0;

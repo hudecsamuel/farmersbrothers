@@ -3,12 +3,12 @@ import React, { useState } from "react";
 
 function Cisterna() {
     const [délka, obrátka] = useState(1); /*useState je hook, který nám vrací současný stav (délka) a funkci(obrátka), která stav updatuje*/
-    /* const [objem, náklad]=useState(1); */
+    const [nmrOfTurns, setNmrOfTurns] = useState(1);
 
 
     function handleClick() {
 
-        switch (délka) {
+        switch (délka * nmrOfTurns) {
             case 1:
                 return 28.88;
             case 2:
@@ -73,7 +73,7 @@ function Cisterna() {
     }
 
     function handleResult() {
-        var výsledek = 21 * handleClick() * délka;
+        var výsledek = 21 * handleClick() * délka * nmrOfTurns;
         document.getElementById("výsledek").innerHTML = Math.round(výsledek) + ' Kč';
     }
 
@@ -95,6 +95,24 @@ function Cisterna() {
         return obrátka((prev) => prev - 1)
     }
 
+    const handleTurnsChange = ({target}) => {
+        const newNmrOfTurns = target.value;
+        if (isNaN(newNmrOfTurns) || !newNmrOfTurns) {
+            return setNmrOfTurns((prev) => prev)
+        } 
+        if (newNmrOfTurns < 1) return setNmrOfTurns(1)
+        return setNmrOfTurns(parseInt(newNmrOfTurns))
+    } 
+
+    const plusTurn = () => setNmrOfTurns((prev) => prev + 1);
+
+    const minusTurn = () => {
+        if (nmrOfTurns <= 1) {
+            return
+        }
+        return setNmrOfTurns((prev) => prev - 1)
+    }
+
 
     return (
         <div className="komplet">
@@ -110,13 +128,13 @@ function Cisterna() {
                 </div>
 
                 <div className="Left-inner-div">
-                    <span>Obvyklý objem nákladu [m<sup id="sub">3</sup>]</span>
+                    <span>Počet obrátek</span>
                 </div>
 
                 <div className="Right-inner-div">
-                    {/* <div className="minus"onClick={() => náklad(objem - 1)}></div> */}
-                    <span id="objem">21</span>
-                    {/* <div className="plus" onClick={() => náklad(objem + 1)}></div> */}
+                    <div className="minus" onClick={minusTurn}></div>
+                    <input onChange={handleTurnsChange} value={nmrOfTurns}></input>
+                    <div className="plus" onClick={plusTurn} ></div>
                 </div>
 
                 <div className="Left-inner-div">

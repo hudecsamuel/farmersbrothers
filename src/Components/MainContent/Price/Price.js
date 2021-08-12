@@ -85,13 +85,6 @@ function Price() {
           </div>
           <div className="right">{showChoice2()}</div>
         </div>
-
-
-        <div className="Notes">
-          <span>→ vedené ceny jsou bez DPH</span>
-          <span>→ možnost zajištění dopravy 24/7</span>
-          <span>→ výše uvedené ceny nejsou závaznou nabídkou, ta bude zaslána na základě poptávky</span>
-        </div>
       </div>
     </div>
   );

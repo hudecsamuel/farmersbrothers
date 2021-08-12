@@ -2,19 +2,19 @@
     cursor: pointer;
     z-index: -1;
     position: absolute;
-    height: 100%;
     width: 100%;
+    height: 100%;
     background-image: url("../../../Assets/Gallery/road_truck.jpg");
+    background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
     animation: Slide-up-cover-price 1s ease 0.2s 1 normal forwards;
     transform: scale(1.15);
-    background-position-y: -20vh;
 }
 
 @media screen and (max-width: 100vh) {
     .Cover-photo-price {
-        cursor: none;
+        cursor: unset;
         animation: none;
         transform: none;
         background-position-y: none;
@@ -44,8 +44,8 @@
     background-color: black;
     display: grid;
     grid-template-columns: repeat(10, 1fr);
-    grid-template-rows: 1fr 0.5fr 5fr 1fr 1.5fr;
-    height: 70vh;
+    grid-template-rows: 1fr 0.8fr 5fr 1fr 1fr;
+    height: 60vh;
     width: 95%;
     margin: 0 auto;
     align-content: center;
@@ -62,7 +62,7 @@
         position: relative;
         top: 40vh;
         height: 100%;
-        grid-template-rows: 10vh 5vh 50vh auto 15vh;
+        grid-template-rows: 10vh 8vh 50vh auto 15vh;
     }
 }
 
@@ -79,7 +79,7 @@
     }
     100% {
         transform: scale(1);
-        background-position-y: -55vh;
+        height: 42vh;
     }
 }
 
@@ -103,6 +103,8 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
     padding: 0.5vh;
+    max-width: 100vh;
+    justify-self: center;
 }
 
 @media screen and (max-width: 100vh) {
@@ -120,9 +122,17 @@
     grid-template-rows: 1.2fr 5fr 2.5fr;
 }
 
+@media screen and (max-width: 100vh) {
+    .left {
+        border-left: none;
+        padding: 0.5vh 0.5vh 0 0;
+    }
+}
+
 .right {
     border-left: solid 0.2vh var(--main-yellow);
     display: flex;
+    align-items: stretch;
 }
 
 @media screen and (max-width: 100vh) {
@@ -131,7 +141,7 @@
         border-top: solid 0.2vh var(--main-yellow);
         padding: 0.5vh 0.5vh 0 0;
         align-items: center;
-        justify-content: center;
+        justify-content: flex-start;
     }
 }
 
@@ -149,8 +159,14 @@
 }
 
 .Tank-right-p {
-    line-height: 2.5vh;
+    line-height: 5vh;
     font-weight: bold;
+}
+
+@media screen and (min-width: 100vh) {
+    .Tank-right-p {
+        line-height: 7vh;
+    }
 }
 
 .table table tr:first-child td {
@@ -410,63 +426,6 @@ table {
     width: 100%;
     height: 100%;
     margin: auto 0;
-}
-
-@keyframes Slide-up-price {
-    0% {
-    }
-    100% {
-        transform: translateY(0);
-    }
-}
-
-@keyframes Slide-up-cover-price {
-    0% {
-    }
-    100% {
-        transform: scale(1);
-        background-position-y: -65vh;
-    }
-}
-
-/* POZNÁMKY */
-
-.Notes {
-    grid-column: 1 / span 10;
-    grid-row: 5 / 5;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
-
-.Notes span {
-    display: flex;
-    color: #fff;
-    flex-direction: column;
-    /* border: 1px solid white; */
-    text-align: left;
-    justify-content: center;
-    line-height: 2.5vh;
-    margin: 0;
-    font-weight: bold;
-    font-size: 1.8vh;
-}
-
-@keyframes Slide-up-price {
-    0% {
-    }
-    100% {
-        transform: translateY(0);
-    }
-}
-
-@keyframes Slide-up-cover-price {
-    0% {
-    }
-    100% {
-        transform: scale(1);
-        background-position-y: -55vh;
-    }
 }
 
 #sub {
