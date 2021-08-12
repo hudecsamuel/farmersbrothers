@@ -59,16 +59,22 @@ class Contact extends React.Component {
                     <h1 className="Contact-heading">KONTAKT</h1>
                     <h3 className="Contact-description">Neváhejte nás v případě jakýkoliv dotazů či nejasností kontaktovat, jsme Vám plně k dispozici.</h3>
                     <div>
-                        <h4>Lukáš Procházka:</h4>
-                        <p>+420 606 021 579</p>
+                        <a href="tel: +420606021579" target='_blank' rel="noreferrer">
+                            <h4>Lukáš Procházka:</h4>
+                            <p>+420 606 021 579</p>
+                        </a>
                     </div>
                     <div className="Second-div">
-                        <h4>Matouš Procházka:</h4>
-                        <p>+420 775 274 377</p>
+                        <a href="tel: +420775274377" target='_blank' rel="noreferrer">
+                            <h4>Matouš Procházka:</h4>
+                            <p>+420 775 274 377</p>
+                        </a>
                     </div>
                     <div className="Second-div">
-                        <h4>E-mail:</h4>
-                        <p>farmersbrothers@seznam.cz</p>
+                        <a href="mailto: farmersbrothers@seznam.cz" target='_blank' rel="noreferrer">
+                            <h4>E-mail:</h4>
+                            <p>farmersbrothers@seznam.cz</p>
+                        </a>
                     </div>
                     <div className="Third-div">
                         <h4>Adresa:</h4>

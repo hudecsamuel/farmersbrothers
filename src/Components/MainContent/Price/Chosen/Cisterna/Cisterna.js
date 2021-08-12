@@ -8,7 +8,7 @@ function Cisterna() {
 
     function handleClick() {
 
-        switch (délka * nmrOfTurns) {
+        switch (délka) {
             case 1:
                 return 28.88;
             case 2:

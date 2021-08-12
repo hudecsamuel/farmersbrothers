@@ -107,8 +107,14 @@
 }
 
 .Contact-big-container div p {
+    font-weight: 700;
     font-size: 1.6vh;
     align-self: center;
+}
+
+.Contact-big-container div a {
+    text-decoration: none;
+    color: white;
 }
 
 .Contact-big-container h4 {

@@ -191,9 +191,12 @@
     padding: 0.7vh;
 }
 
-.right p {
-    margin: auto 2vh auto;
+.right p,
+.right li {
+    margin: auto 2vh auto 4vh;
     text-align: left;
+    font-size: 1.8vh;
+    list-style: circle;
 }
 
 /* KALKULAČKA */
