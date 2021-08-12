@@ -245,9 +245,11 @@
 
 @media screen and (max-width: 100vh) {
     .Contact-big-container .Map-image {
-        height: 95%;
+        height: 70%;
         width: 95%;
         cursor: unset;
+        margin-bottom: 0;
+        margin-top: 3vh;
     }
 }
 
