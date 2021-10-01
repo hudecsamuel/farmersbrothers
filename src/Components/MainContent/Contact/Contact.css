@@ -34,8 +34,8 @@
     border-top-left-radius: 1vh;
     border-top-right-radius: 1vh;
     padding: 0 1%;
-    color: white;
-    background-color: black;
+    color: var(--main-yellow);
+    background-color: var(--main-black);
     display: grid;
     grid-template-columns: repeat(10, 1fr);
     grid-template-rows: 2fr 3fr 1.5fr 10fr;
@@ -107,14 +107,14 @@
 }
 
 .Contact-big-container div p {
-    font-weight: 700;
+    font-weight: 500;
     font-size: 1.6vh;
     align-self: center;
 }
 
 .Contact-big-container div a {
     text-decoration: none;
-    color: white;
+    color: var(--main-yellow);
 }
 
 .Contact-big-container h4 {
@@ -182,23 +182,23 @@
 }
 
 .Second-div {
-    border-left: 0.2vh solid white;
+    border-left: 0.2vh solid var(--main-yellow);
 }
 
 .Third-div {
-    border-left: 0.2vh solid white;
-    border-right: 0.2vh solid white;
+    border-left: 0.2vh solid var(--main-yellow);
+    border-right: 0.2vh solid var(--main-yellow);
 }
 
 @media screen and (max-width: 100vh) {
     .Second-div {
-        border-top: 0.2vh solid white;
+        border-top: 0.2vh solid var(--main-yellow);
         border-left: none;
     }
 
     .Third-div {
-        border-top: 0.2vh solid white;
-        border-bottom: 0.2vh solid white;
+        border-top: 0.2vh solid var(--main-yellow);
+        border-bottom: 0.2vh solid var(--main-yellow);
         border-left: none;
         border-right: none;
     }
@@ -208,6 +208,7 @@
     grid-column: 6 / span 5;
     grid-row: 4;
     position: static;
+    flex-direction: column-reverse;
 }
 
 @media screen and (max-width: 100vh) {
@@ -216,15 +217,17 @@
         grid-row: auto;
         grid-column: 1;
         width: 100%;
+        flex-direction: column;
+        margin: 1vh 0;
     }
 }
 
 .Contact-big-container .Map p {
     font-size: 2vh;
-    text-decoration: underline;
     font-style: italic;
+    font-weight: normal;
     color: var(--main-yellow);
-    margin: 2.5vh 0 2vh 0;
+    margin: 1.5vh 0 2vh 0;
     letter-spacing: 0;
 }
 
@@ -239,14 +242,14 @@
 
 .Contact-big-container .Map-image {
     cursor: zoom-in;
-    margin-bottom: 3vh;
+    margin-top: 4vh;
     height: 80%;
     width: 80%;
     background-image: url("../../../Assets/TransparentMapa.svg");
     background-repeat: no-repeat;
     background-size: contain;
     background-position: center;
-    background-color: black;
+    background-color: var(--main-black);
 }
 
 @media screen and (max-width: 100vh) {
@@ -254,8 +257,8 @@
         height: 70%;
         width: 95%;
         cursor: unset;
-        margin-bottom: 0;
-        margin-top: 3vh;
+        margin-bottom: 0;        
+        margin: 1vh 0;
     }
 }
 

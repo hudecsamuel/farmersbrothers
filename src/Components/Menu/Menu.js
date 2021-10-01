@@ -11,10 +11,10 @@ class Menu extends React.Component {
     this.textChoice = 'DOMŮ';
   }
 
-  handleClick(e) {
+  handleClick(e, manual = null) {
     const layDev = this.props.layoutAndDevice
     let choice;
-    const elText = e.target.innerText;
+    const elText = manual ? manual : e.target.innerText;
     switch (elText) {
       case 'DOMŮ':
         choice = 1;
@@ -48,8 +48,8 @@ class Menu extends React.Component {
     const layoutAndDevice = this.props.layoutAndDevice;
     const isMenuDisplayed = this.props.isMenuDisplayed;
     const rightBorder = (this.textChoice === 'GALERIE' /* For not to display yellow right border on menu in home component → || this.textChoice === 'DOMŮ' */)
-    && layoutAndDevice === 'PC' ?
-    { borderRight: '0.1vh solid var(--main-black)' } : { borderRight: '0.1vh solid var(--main-yellow)' }
+      && layoutAndDevice === 'PC' ?
+      { borderRight: '0.1vh solid var(--main-black)' } : { borderRight: '0.1vh solid var(--main-yellow)' }
     console.log(layoutAndDevice)
     return (
       <div>
@@ -57,7 +57,7 @@ class Menu extends React.Component {
           <Hamburger layoutAndDevice={layoutAndDevice} isMenuDisplayed={isMenuDisplayed} />
         </div>}
         {layoutAndDevice === 'MOBILE' && <div id='Mobile-haburger-bar'>
-          <div className="Big-logo-mobile"></div>
+          <div onClick={() => this.handleClick(null, 'DOMŮ')} className="Big-logo-mobile"></div>
         </div>}
         {layoutAndDevice === 'MOBILE' && <div onClick={this.handleToggleVisibility} className='Mobile-hamburger-container'>
           <Hamburger layoutAndDevice={layoutAndDevice} isMenuDisplayed={isMenuDisplayed} />
@@ -71,8 +71,29 @@ class Menu extends React.Component {
           ...rightBorder,
           animation: !isMenuDisplayed ? 'Slide-menu-left 0.5s ease forwards' : 'Slide-menu-right 0.5s ease forwards'
         }}>
-          <div className="Big-logo"></div>
-          <p className="Shit"><span>→ </span>  SHIT HAPPENS  <span> ←</span></p>
+          <div style={{ cursor: 'pointer' }} onClick={() => this.handleClick(null, 'DOMŮ')} className="Big-logo"></div>
+          <p className="Shit">
+            <span style={{
+              color: 'var(--main-yellow)',
+              textTransform: 'uppercase',
+              lineHeight: 1.75,
+              fontSize: '1vh',
+              textAlign: 'center',
+              margin: 0,
+              letterSpacing: '0.7vh'
+            }}>Velkooběmová přeprava</span><br></br>
+            <span style={{
+              color: 'var(--main-yellow)',
+              textTransform: 'uppercase',
+              lineHeight: 1.75,
+              fontSize: '1vh',
+              textAlign: 'center',
+              margin: 0,
+              letterSpacing: '0.6vh'
+            }}>tekutých a sypkých hmot</span><br></br>
+            <br></br>
+            <br></br>
+            <span>→ </span>  SHIT HAPPENS  <span> ←</span></p>
           <nav>
             <div onClick={this.handleClick} className="Home-button">DOMŮ</div>
             <div onClick={this.handleClick} className="Price-button">CENÍK</div>

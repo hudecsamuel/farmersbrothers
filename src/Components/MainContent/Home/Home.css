@@ -28,7 +28,8 @@
 }
 
 .Home-footer .instag,
-.Home-footer .phon {
+.Home-footer .phon,
+.Home-footer .email-footer {
     height: 6vh;
     width: 6vh;
     background-repeat: no-repeat;
@@ -45,10 +46,18 @@
     background-image: url("../../../Assets/Phone.svg");
 }
 
+.Home-footer .email-footer {
+    background-image: url("../../../Assets/Email.svg");
+}
+
 .Home-footer .instag:active {
     background-image: url("../../../Assets/Instagram-filled.svg");
 }
 
 .Home-footer .phon:active {
     background-image: url("../../../Assets/Phone-filled.svg");
+}
+
+.Home-footer .email-footer:active {
+    background-image: url("../../../Assets/Email-filled.svg");
 }

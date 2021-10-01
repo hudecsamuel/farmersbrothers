@@ -3,7 +3,7 @@ Udělej to pls jako grid, to bude nejpřesnější ;) - jinak písmo jsem dal re
 */
 
 .Menu {
-    background-color: black;
+    background-color: var(--main-black);
     width: calc(50vh - 0.1vh); /* Subtracting border */
     height: 100%;
     position: fixed; /* Toto jsem dal fixed, aby pod tím nevznikal bílej scrollovací prostor */
@@ -29,11 +29,13 @@ Udělej to pls jako grid, to bude nejpřesnější ;) - jinak písmo jsem dal re
     top: 0;
     left: 0;
     right: 0;
-    margin: 25vh auto;
+    margin: 23vh auto;
     color: #a57655;
     font-size: 1.3vh;
     font-family: Libre Backerville;
     letter-spacing: 0.9vh;
+    width: 70%;
+    min-width: 31vh;
 }
 
 .Big-logo {
@@ -42,7 +44,7 @@ Udělej to pls jako grid, to bude nejpřesnější ;) - jinak písmo jsem dal re
     left: 0;
     right: 0;
     margin: 0 auto;
-    height: 12%;
+    height: 12.5%;
     background-image: url("../../Assets/BIG_LOGO.svg");
     background-repeat: no-repeat;
     background-size: contain;
@@ -62,7 +64,7 @@ img {
 nav {
     position: absolute;
     bottom: 0;
-    top: 4vh;
+    top: 10vh;
     left: 0;
     right: 0;
     margin: auto auto;

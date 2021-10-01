@@ -4,7 +4,7 @@ function SklizeňVpravo() {
   return (
     <div className="table">
       <table>
-        <tbody>
+        <tbody style={{color: 'var(--main-yellow)'}}>
           <tr>
             <td>Minimální denní sazba [Kč]</td>
             <td>3000</td>

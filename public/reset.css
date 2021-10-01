@@ -97,7 +97,8 @@
 :root {
   font-family: Lato, sans-serif;
   --main-yellow: #cfb53c;
-  --main-black: #000;
+  --main-yellow-light: #cfb43c50; 
+  --main-black: #050505;
 }
 
 ::-webkit-scrollbar {
@@ -123,6 +124,8 @@ time, mark, audio, video {
   font-size: 100%;
   font: inherit;
   vertical-align: baseline;
+  -webkit-tap-highlight-color: transparent;
+  user-select: none;
 }
 
 /* HTML5 display-role reset for older browsers */

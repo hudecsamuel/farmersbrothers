@@ -31,7 +31,7 @@ class Contact extends React.Component {
                     txtArea.innerText = 'ZPRÁVA ODESLÁNA :)'
                     console.log('SUCCESS!', response.status, response.text);
                     setTimeout(() => {
-                        txtArea.style.color = 'black'
+                        txtArea.style.color = 'var(--main-black)'
                         txtArea.innerText = ''
                         e.target.reset();
                     }, 2000);
@@ -40,7 +40,7 @@ class Contact extends React.Component {
                     txtArea.style.color = 'red'
                     txtArea.innerText = 'CHYBA! :('
                     setTimeout(() => {
-                        txtArea.style.color = 'black'
+                        txtArea.style.color = 'var(--main-black)'
                         txtArea.innerText = ''
                         e.target.reset();
                     }, 2000);
@@ -86,7 +86,7 @@ class Contact extends React.Component {
                         <p>09032932 / CZ09032932</p>
                     </div>
                     <div className="Map">
-                        <p>Kde všude jste nás mohli potkat:</p>
+                        <p>Dojedeme za Vámi po celé ČR</p>
                         <div className="Map-image"></div>
                     </div>
                     <Form handleFormSubmit={this.handleFormSubmit} />
