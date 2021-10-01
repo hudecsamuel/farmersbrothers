@@ -80,8 +80,8 @@ class Menu extends React.Component {
               fontSize: '1vh',
               textAlign: 'center',
               margin: 0,
-              letterSpacing: '0.7vh'
-            }}>Velkooběmová přeprava</span><br></br>
+              letterSpacing: '0.65vh'
+            }}>Velkoobjemová přeprava</span><br></br>
             <span style={{
               color: 'var(--main-yellow)',
               textTransform: 'uppercase',
