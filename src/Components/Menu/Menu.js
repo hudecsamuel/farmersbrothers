@@ -110,7 +110,7 @@ class Menu extends React.Component {
               </a>
             </div>
             <div className="phone">
-              <a href="tel: 722440225" target='_blank' rel="noreferrer">
+              <a href="tel: +420775274377" target='_blank' rel="noreferrer">
                 <div className="pho"></div>
                 <div className="pho-text">
                   <p>+420 606 021 579</p>
