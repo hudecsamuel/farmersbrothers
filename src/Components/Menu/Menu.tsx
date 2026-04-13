@@ -10,7 +10,11 @@ interface MenuProps {
   isMenuDisplayed: boolean;
 }
 
-class Menu extends React.Component<MenuProps> {
+interface MenuState {
+  hasInteracted: boolean;
+}
+
+class Menu extends React.Component<MenuProps, MenuState> {
   textChoice: string;
 
   constructor(props: MenuProps) {
@@ -18,6 +22,7 @@ class Menu extends React.Component<MenuProps> {
     this.handleClick = this.handleClick.bind(this);
     this.handleToggleVisibility = this.handleToggleVisibility.bind(this);
     this.textChoice = 'DOMŮ';
+    this.state = { hasInteracted: false };
   }
 
   handleClick(e: React.MouseEvent<HTMLDivElement>, manual: string | null = null) {
@@ -33,13 +38,17 @@ class Menu extends React.Component<MenuProps> {
         choice = 2;
         this.textChoice = 'CENÍK';
         break;
-      case 'GALERIE':
+      case 'VOZOVÝ PARK':
         choice = 3;
-        this.textChoice = 'GALERIE';
+        this.textChoice = 'VOZOVÝ PARK';
         break;
       case 'KONTAKT':
         choice = 4;
         this.textChoice = 'KONTAKT';
+        break;
+      case 'PRACOVNÍ POZICE':
+        choice = 5;
+        this.textChoice = 'PRACOVNÍ POZICE';
         break;
       default:
         choice = 1;
@@ -50,28 +59,28 @@ class Menu extends React.Component<MenuProps> {
   }
 
   handleToggleVisibility() {
-    this.props.toggleMenuVisibility()
+    this.setState({ hasInteracted: true });
+    this.props.toggleMenuVisibility();
   }
 
   render() {
     const layoutAndDevice = this.props.layoutAndDevice;
     const isMenuDisplayed = this.props.isMenuDisplayed;
-    const rightBorder: React.CSSProperties = (this.textChoice === 'GALERIE')
-      && layoutAndDevice === 'PC' ?
-      { borderRight: '0.1vh solid var(--main-black)' } : { borderRight: '0.1vh solid var(--main-yellow)' }
+    const rightBorder: React.CSSProperties = { borderRight: '0.1vh solid var(--main-yellow)' }
     return (
       <div>
         {layoutAndDevice === 'TABLET' && <div onClick={this.handleToggleVisibility} id='Tablet-hamburger-button'>
-          <Hamburger layoutAndDevice={layoutAndDevice} isMenuDisplayed={isMenuDisplayed} />
+          <Hamburger layoutAndDevice={layoutAndDevice} isMenuDisplayed={isMenuDisplayed} hasInteracted={this.state.hasInteracted} />
         </div>}
         {layoutAndDevice === 'MOBILE' && <div id='Mobile-haburger-bar'>
           <div onClick={() => this.handleClick(null as unknown as React.MouseEvent<HTMLDivElement>, 'DOMŮ')} className="Big-logo-mobile"></div>
         </div>}
         {layoutAndDevice === 'MOBILE' && <div onClick={this.handleToggleVisibility} className='Mobile-hamburger-container'>
-          <Hamburger layoutAndDevice={layoutAndDevice} isMenuDisplayed={isMenuDisplayed} />
+          <Hamburger layoutAndDevice={layoutAndDevice} isMenuDisplayed={isMenuDisplayed} hasInteracted={this.state.hasInteracted} />
         </div>}
         <div className="Menu" style={layoutAndDevice === 'MOBILE' ? {
-          animation: !isMenuDisplayed ? 'Slide-mobile-menu-right 0.5s ease forwards' : 'Slide-mobile-menu-left 0.5s ease forwards'
+          animation: !this.state.hasInteracted ? 'none' : (!isMenuDisplayed ? 'Slide-mobile-menu-right 0.5s ease forwards' : 'Slide-mobile-menu-left 0.5s ease forwards'),
+          transform: !this.state.hasInteracted && !isMenuDisplayed ? 'translateX(100%)' : undefined,
         } : layoutAndDevice === 'PC' ? {
           ...rightBorder,
           animation: 'none'
@@ -83,27 +92,18 @@ class Menu extends React.Component<MenuProps> {
           <p className="Shit">
             <span style={{
               color: 'var(--main-yellow)',
-              textTransform: 'uppercase',
-              lineHeight: 1.75,
-              fontSize: '1vh',
+              fontSize: '1.1vh',
               textAlign: 'center',
               margin: 0,
-              letterSpacing: '0.65vh'
-            }}>Velkoobjemová přeprava</span><br></br>
-            <span style={{
-              color: 'var(--main-yellow)',
-              textTransform: 'uppercase',
-              lineHeight: 1.75,
-              fontSize: '1vh',
-              textAlign: 'center',
-              margin: 0,
-              letterSpacing: '0.6vh'
-            }}>tekutých a sypkých hmot</span></p>
+              letterSpacing: '0.5vh'
+            }}>EST. 2020</span>
+          </p>
           <nav>
             <div onClick={this.handleClick} className="Home-button">DOMŮ</div>
             <div onClick={this.handleClick} className="Price-button">CENÍK</div>
-            <div onClick={this.handleClick} className="Gallery-button">GALERIE</div>
+            <div onClick={this.handleClick} className="Gallery-button">VOZOVÝ PARK</div>
             <div onClick={this.handleClick} className="Contact-button">KONTAKT</div>
+            <div onClick={this.handleClick} className="Jobs-button">PRACOVNÍ POZICE</div>
           </nav>
           <footer>
             <div className="instagram">

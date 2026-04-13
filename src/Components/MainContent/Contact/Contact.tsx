@@ -52,7 +52,7 @@ class Contact extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className="contact-page">
         <div className="Cover-photo-contact"></div>
         <div className="Contact-big-container">
           <h1 className="Contact-heading">KONTAKT</h1>

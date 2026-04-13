@@ -43,14 +43,11 @@
     font-family: Lato, sans-serif;
     font-size: 2vh;
     border: none;
-    outline: none;    
+    outline: none;
     color: var(--main-yellow);
     background-color: transparent;
-    border-bottom-left-radius: 0.5vh;
-    border-bottom-right-radius: 0.5vh;
-    border-bottom: 0.2vh solid var(--main-yellow);
-    border-left: 0.2vh solid var(--main-yellow);
-    border-right: 0.2vh solid var(--main-yellow);
+    border-radius: 0.5vh;
+    border: 0.2vh solid var(--main-yellow);
 }
 
 @media screen and (max-width: 100vh) {
@@ -70,12 +67,9 @@
     outline: none;
     color: var(--main-yellow);
     background-color: transparent;
-    border-bottom-left-radius: 0.5vh;
-    border-bottom-right-radius: 0.5vh;
-    border-bottom: 0.2vh solid var(--main-yellow);
-    border-left: 0.2vh solid var(--main-yellow);
-    border-right: 0.2vh solid var(--main-yellow);
-    padding: 0;
+    border-radius: 0.5vh;
+    border: 0.2vh solid var(--main-yellow);
+    padding: 0.3vh 0;
 }
 
 @media screen and (max-width: 100vh) {
@@ -132,15 +126,15 @@
 #Main-form label {
     font-size: 1.7vh;
     justify-self: right;
-    align-self: flex-start;
-    margin: 1vh 1vh 0 1vh;
+    align-self: center;
+    margin: 0;
     font-family: Lato, sans-serif;
     font-weight: 500;
 }
 
 #Main-form .Textarea-label {
-    margin: 1vh 1vh 0 1vh;
-    align-self: flex-start;
+    margin: 0;
+    align-self: center;
 }
 
 @media screen and (max-width: 100vh) {

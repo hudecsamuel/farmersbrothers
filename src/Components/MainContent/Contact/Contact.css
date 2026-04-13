@@ -1,63 +1,66 @@
-.Cover-photo-contact {
-    cursor: pointer;
-    z-index: -1;
-    position: absolute;
-    height: 100%;
+.contact-page {
     width: 100%;
+    height: 100%;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+@media screen and (max-width: 100vh) {
+    .contact-page {
+        overflow-y: auto;
+    }
+}
+
+.Cover-photo-contact {
+    width: 100%;
+    height: 42vh;
+    flex-shrink: 0;
+    position: relative;
     background-image: url("../../../Assets/Gallery/flag_truck.jpg");
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
-    animation: Slide-up-cover 1s ease 0.2s 1 normal forwards;
-    transform: scale(1.15);
+}
+
+.Cover-photo-contact::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 40%;
+    background: linear-gradient(to bottom, transparent, var(--main-black));
+    pointer-events: none;
 }
 
 @media screen and (max-width: 100vh) {
     .Cover-photo-contact {
-        cursor: none;
-        animation: none;
-        transform: none;
-        background-position-y: none;
-        background-size: stretch;
-        background-position: center;
-        width: 100%;
-        height: 32vh;
-        top: 10vh;
-        z-index: 1;
+        height: 36vh;
+        margin-top: 10vh;
     }
 }
 
 .Contact-big-container {
-    position: absolute;
-    bottom: 0;
+    flex: 1;
     z-index: 2;
-    border-top-left-radius: 1vh;
-    border-top-right-radius: 1vh;
-    padding: 0 1%;
+    padding: 2vh 1%;
     color: var(--main-yellow);
     background-color: var(--main-black);
     display: grid;
     grid-template-columns: repeat(10, 1fr);
-    grid-template-rows: 2fr 3fr 1.5fr 10fr;
-    height: 60vh;
+    grid-template-rows: auto auto auto 1fr;
     width: 98%;
     margin: 0 auto;
-    align-content: center;
+    align-content: start;
     justify-content: center;
-    animation: Slide-up 1s ease 0.2s 1 normal forwards;
-    transform: translateY(60vh);
 }
 
 @media screen and (max-width: 100vh) {
     .Contact-big-container {
-        padding: 0 2.5%;
+        padding: 2vh 2.5%;
         width: 95%;
-        animation: none;
-        transform: none;
-        position: relative;
-        top: 40vh;
-        height: 100%;
-        grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 5fr 6fr;
+        grid-template-rows: auto auto auto auto auto auto auto 1fr auto;
         grid-template-columns: 1fr;
     }
 }
@@ -65,22 +68,6 @@
 .Contact-big-container p,
 .Contact-big-container h4 {
     word-break: unset;
-}
-
-@keyframes Slide-up {
-    0% {
-    }
-    100% {
-        transform: translateY(0);
-    }
-}
-
-@keyframes Slide-up-cover {
-    0% {
-    }
-    100% {
-        height: 42vh;
-    }
 }
 
 .Contact-big-container div {
@@ -144,6 +131,7 @@
     color: var(--main-yellow);
     justify-self: center;
     align-self: flex-end;
+    margin-bottom: 1vh;
 }
 
 @media screen and (max-width: 100vh) {
@@ -153,16 +141,6 @@
     }
 }
 
-.Contact-heading::before {
-    content: "";
-    position: absolute;
-    width: 100%;
-    bottom: -1vh;
-    left: 0;
-    height: 0.1vh;
-    border: 0.1vh solid #cfb53c;
-    background-color: #cfb53c;
-}
 
 .Contact-description {
     font-size: 2vh;
@@ -171,6 +149,7 @@
     text-align: center;
     justify-self: center;
     align-self: center;
+    padding: 1.5vh 0;
 }
 
 @media screen and (max-width: 100vh) {
@@ -245,7 +224,7 @@
     margin-top: 4vh;
     height: 80%;
     width: 80%;
-    background-image: url("../../../Assets/TransparentMapa.svg");
+    background-image: url("../../../Assets/Mapa.jpg");
     background-repeat: no-repeat;
     background-size: contain;
     background-position: center;
@@ -257,7 +236,6 @@
         height: 70%;
         width: 95%;
         cursor: unset;
-        margin-bottom: 0;        
         margin: 1vh 0;
     }
 }

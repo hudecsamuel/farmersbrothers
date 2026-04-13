@@ -1,6 +1,6 @@
 /* ─── ALL SIZES ──────────────────────────────────────────────────────────── */
 
-.price-page {
+.jobs-page {
     width: 100%;
     height: 100%;
     overflow-y: auto;
@@ -8,18 +8,18 @@
     flex-direction: column;
 }
 
-.price-hero {
+.jobs-hero {
     width: 100%;
     height: 42vh;
-    background-image: url("../../../Assets/Gallery/road_truck.jpg");
+    flex-shrink: 0;
+    background-image: url("../../../Assets/Gallery/sunset_truck.jpg");
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
     position: relative;
-    flex-shrink: 0;
 }
 
-.price-hero::after {
+.jobs-hero::after {
     content: '';
     position: absolute;
     bottom: 0;
@@ -30,16 +30,16 @@
     pointer-events: none;
 }
 
-.price-content {
+.jobs-content {
     background-color: var(--main-black);
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 2vh 0 6vh;
+    padding: 4vh 0 6vh;
     flex: 1;
 }
 
-.price-heading {
+.jobs-heading {
     font-size: 3.8vh;
     font-weight: bold;
     color: var(--main-yellow);
@@ -47,43 +47,86 @@
     margin-bottom: 3vh;
 }
 
-.price-body {
-    max-width: 72vh;
+.jobs-intro {
+    max-width: 90vh;
     width: 88%;
     display: flex;
     flex-direction: column;
-    gap: 2vh;
+    gap: 1.5vh;
+    margin-bottom: 4vh;
+    padding-bottom: 3vh;
+    border-bottom: 0.1vh solid rgba(207, 181, 60, 0.3);
 }
 
-.price-body p {
+.jobs-intro p {
     font-size: 1.8vh;
     line-height: 2.9vh;
     color: rgba(255, 255, 255, 0.85);
 }
 
-.price-body ul {
+.jobs-columns {
+    max-width: 90vh;
+    width: 88%;
+    display: flex;
+    gap: 4vh;
+    align-items: flex-start;
+}
+
+.jobs-col {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 3vh;
+}
+
+.jobs-cta {
+    max-width: 90vh;
+    width: 88%;
+    margin-top: 3vh;
+    padding-top: 3vh;
+    border-top: 0.1vh solid rgba(207, 181, 60, 0.3);
+}
+
+.jobs-section {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2vh;
+}
+
+.jobs-section-title {
+    font-size: 2vh;
+    font-weight: bold;
+    color: var(--main-yellow);
+}
+
+.jobs-section ul {
     list-style: disc;
     padding-left: 2.2vh;
     display: flex;
     flex-direction: column;
-    gap: 1.6vh;
+    gap: 1vh;
 }
 
-.price-body li {
-    font-size: 1.8vh;
-    line-height: 2.9vh;
-    color: var(--main-yellow);
+.jobs-section li {
+    font-size: 1.7vh;
+    line-height: 2.7vh;
+    color: rgba(255, 255, 255, 0.85);
 }
 
-.price-links {
+.jobs-cta-text {
+    font-size: 1.7vh;
+    line-height: 2.7vh;
+    color: rgba(255, 255, 255, 0.85);
+}
+
+.jobs-links {
     display: flex;
-    gap: 3vh;
+    gap: 2.5vh;
     flex-wrap: wrap;
-    padding-top: 1vh;
-    border-top: 0.1vh solid rgba(207, 181, 60, 0.3);
+    margin-top: 0.5vh;
 }
 
-.price-links a {
+.jobs-links a {
     color: var(--main-yellow);
     font-size: 1.9vh;
     font-weight: bold;
@@ -91,35 +134,45 @@
     letter-spacing: 0.05vh;
 }
 
-.price-links a:hover {
+.jobs-links a:hover {
     opacity: 0.75;
 }
 
 /* ─── MOBILE (max-width: 100vh) ──────────────────────────────────────────── */
 
 @media screen and (max-width: 100vh) {
-    .price-hero {
+    .jobs-hero {
         margin-top: 10vh;
-        height: 48vh;
+        height: 40vh;
     }
 
-    .price-heading {
+    .jobs-heading {
         font-size: 5vw;
         margin-bottom: 2vh;
     }
 
-    .price-body {
-        max-width: none;
-        gap: 2.5vh;
+    .jobs-intro p {
+        font-size: 3.8vw;
+        line-height: 6vw;
     }
 
-    .price-body p,
-    .price-body li {
-        font-size: 4vw;
-        line-height: 6.5vw;
+    .jobs-columns {
+        flex-direction: column;
+        gap: 3vh;
     }
 
-    .price-links a {
+
+    .jobs-section-title {
+        font-size: 4.2vw;
+    }
+
+    .jobs-section li,
+    .jobs-cta-text {
+        font-size: 3.8vw;
+        line-height: 6vw;
+    }
+
+    .jobs-links a {
         font-size: 4vw;
     }
 }

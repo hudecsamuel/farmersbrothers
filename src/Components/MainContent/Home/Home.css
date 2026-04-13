@@ -1,26 +1,101 @@
-.BG-image {
+.home-page {
     width: 100%;
     height: 100%;
-    background-image: url('../../../Assets/Gallery/field_truck.jpg');
-    background-repeat: no-repeat;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.home-hero {
+    width: 100%;
+    flex: 0 0 calc(100% - 16vh);
+    position: relative;
+    overflow: hidden;
+}
+
+.home-hero-slide {
+    position: absolute;
+    inset: 0;
     background-size: cover;
     background-position: center;
+    background-repeat: no-repeat;
+    transition: opacity 1.5s ease;
+}
+
+.home-hero-gradient {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 35%;
+    background: linear-gradient(to bottom, transparent, var(--main-black));
+    pointer-events: none;
+}
+
+.home-about {
+    background-color: var(--main-black);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 4vh 0 6vh;
+    flex: 1;
+}
+
+.home-about-heading {
+    font-size: 3.8vh;
+    font-weight: bold;
+    color: var(--main-yellow);
+    text-align: center;
+    margin-bottom: 3vh;
+}
+
+.home-about-body {
+    max-width: 72vh;
+    width: 88%;
+    display: flex;
+    flex-direction: column;
+    gap: 2vh;
+}
+
+.home-about-body p {
+    font-size: 1.8vh;
+    line-height: 2.9vh;
+    color: rgba(255, 255, 255, 0.85);
 }
 
 .Home-footer {
     display: none;
 }
 
+/* ─── MOBILE (max-width: 100vh) ──────────────────────────────────────────── */
+
 @media screen and (max-width: 100vh) {
+    .home-hero {
+        flex: 0 0 calc(100% - 34vh);
+        margin-top: 10vh;
+    }
+
+    .home-about {
+        padding-bottom: 12vh;
+    }
+
+    .home-about-heading {
+        font-size: 5vw;
+    }
+
+    .home-about-body p {
+        font-size: 4vw;
+        line-height: 6.5vw;
+    }
+
     .Home-footer {
-        display: block;
+        display: flex;
         position: fixed;
         height: 10vh;
         bottom: 0;
         width: calc(100% - 10vh);
         z-index: 2;
         background-color: var(--main-black);
-        display: flex;
         align-items: center;
         justify-content: space-around;
         padding: 0 5vh;

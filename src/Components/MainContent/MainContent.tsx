@@ -2,7 +2,8 @@ import React from 'react';
 import Home from './Home/Home';
 import Contact from './Contact/Contact';
 import Price from './Price/Price';
-import Gallery from './Gallery/Gallery';
+import Fleet from './Fleet/Fleet';
+import Jobs from './Jobs/Jobs';
 import { LayoutAndDevice } from '../../types';
 
 interface MainContentProps {
@@ -24,9 +25,11 @@ class MainContent extends React.Component<MainContentProps> {
       case 2:
         return <Price />;
       case 3:
-        return <Gallery layoutAndDevice={this.props.layoutAndDevice} />;
+        return <Fleet />;
       case 4:
         return <Contact />;
+      case 5:
+        return <Jobs />;
       default:
         return null;
     }

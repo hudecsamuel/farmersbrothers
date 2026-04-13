@@ -14,7 +14,7 @@ class Form extends React.Component<FormProps> {
         <input name="name" type="text" required />
         <label>E-mail</label>
         <input name="email" type="email" placeholder="@" required />
-        <input id="Hrnekmedu" name="subject" type="text" autoComplete="off" placeholder="Hrnek medu"></input>
+        <input id="Hrnekmedu" name="subject" type="text" autoComplete="off" placeholder="Hrnek medu" style={{ display: 'none' }}></input>
         <label className="Textarea-label">Zpráva</label>
         <textarea name="message" id='Form-textarea' />
         <button type="submit">Odeslat</button>

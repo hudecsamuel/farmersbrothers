@@ -71,7 +71,7 @@ nav {
     overflow: auto;
     display: flex;
     flex-direction: column;
-    height: 30%;
+    height: 38%;
     justify-content: space-around;
 }
 
@@ -152,7 +152,8 @@ footer p {
 .Home-button,
 .Price-button,
 .Gallery-button,
-.Contact-button {
+.Contact-button,
+.Jobs-button {
     margin: 0 auto;
     width: fit-content;
     position: relative;
@@ -166,7 +167,8 @@ footer p {
 .Home-button::before,
 .Price-button::before,
 .Gallery-button::before,
-.Contact-button::before {
+.Contact-button::before,
+.Jobs-button::before {
     visibility: hidden;
     content: "";
     position: absolute;
@@ -182,7 +184,8 @@ footer p {
 .Home-button:hover::before,
 .Price-button:hover::before,
 .Gallery-button:hover::before,
-.Contact-button:hover::before {
+.Contact-button:hover::before,
+.Jobs-button:hover::before {
     visibility: visible;
     left: 0;
     width: 100%;

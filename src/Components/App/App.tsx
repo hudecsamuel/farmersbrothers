@@ -12,10 +12,15 @@ interface AppState {
 class App extends React.Component<Record<string, never>, AppState> {
   constructor(props: Record<string, never>) {
     super(props);
+    const layoutAndDevice: LayoutAndDevice = matchMedia('screen and (min-width: 165vh)').matches
+      ? 'PC'
+      : matchMedia('screen and (min-width: 100vh)').matches
+        ? 'TABLET'
+        : 'MOBILE'
     this.state = {
       choice: 1,
-      layoutAndDevice: 'PC',
-      isMenuDisplayed: true
+      layoutAndDevice,
+      isMenuDisplayed: layoutAndDevice === 'PC'
     }
     this.changeMenuChoice = this.changeMenuChoice.bind(this);
     this.toggleMenuVisibility = this.toggleMenuVisibility.bind(this);
