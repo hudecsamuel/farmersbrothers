@@ -1,9 +1,16 @@
 import React from 'react';
 import MainContent from '../MainContent/MainContent';
 import Menu from '../Menu/Menu';
+import { LayoutAndDevice } from '../../types';
 
-class App extends React.Component {
-  constructor(props) {
+interface AppState {
+  choice: number;
+  layoutAndDevice: LayoutAndDevice;
+  isMenuDisplayed: boolean;
+}
+
+class App extends React.Component<Record<string, never>, AppState> {
+  constructor(props: Record<string, never>) {
     super(props);
     this.state = {
       choice: 1,
@@ -26,23 +33,22 @@ class App extends React.Component {
         layoutAndDevice: 'PC',
         isMenuDisplayed: true
       })
-      return console.log('Nad 165vh: ' + this.state.layoutAndDevice)
+      return;
     }
     if (matchMedia('screen and (min-width: 100vh)').matches) {
       this.setState({
         layoutAndDevice: 'TABLET',
         isMenuDisplayed: false
       })
-      return console.log('Mezi 165vh a 100vh: ' + this.state.layoutAndDevice)
+      return;
     }
     this.setState({
       layoutAndDevice: 'MOBILE',
       isMenuDisplayed: false
     })
-    return console.log('Pod 100vh: ' + this.state.layoutAndDevice)
   }
 
-  changeMenuChoice(newChoice) {
+  changeMenuChoice(newChoice: number) {
     this.setState({
       choice: newChoice
     });
@@ -53,7 +59,6 @@ class App extends React.Component {
       ...prev,
       isMenuDisplayed: !prev.isMenuDisplayed
     }))
-    console.log(this.state.isMenuDisplayed)
   }
 
   render() {

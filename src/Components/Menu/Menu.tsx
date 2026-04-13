@@ -1,20 +1,29 @@
 import React from 'react';
 import Hamburger from './Hamburger'
 import './Menu.css';
+import { LayoutAndDevice } from '../../types';
 
-//component
-class Menu extends React.Component {
-  constructor(props) {
+interface MenuProps {
+  onSelect: (choice: number) => void;
+  toggleMenuVisibility: () => void;
+  layoutAndDevice: LayoutAndDevice;
+  isMenuDisplayed: boolean;
+}
+
+class Menu extends React.Component<MenuProps> {
+  textChoice: string;
+
+  constructor(props: MenuProps) {
     super(props);
     this.handleClick = this.handleClick.bind(this);
     this.handleToggleVisibility = this.handleToggleVisibility.bind(this);
     this.textChoice = 'DOMŮ';
   }
 
-  handleClick(e, manual = null) {
+  handleClick(e: React.MouseEvent<HTMLDivElement>, manual: string | null = null) {
     const layDev = this.props.layoutAndDevice
-    let choice;
-    const elText = manual ? manual : e.target.innerText;
+    let choice: number;
+    const elText = manual ? manual : (e.target as HTMLDivElement).innerText;
     switch (elText) {
       case 'DOMŮ':
         choice = 1;
@@ -47,17 +56,16 @@ class Menu extends React.Component {
   render() {
     const layoutAndDevice = this.props.layoutAndDevice;
     const isMenuDisplayed = this.props.isMenuDisplayed;
-    const rightBorder = (this.textChoice === 'GALERIE' /* For not to display yellow right border on menu in home component → || this.textChoice === 'DOMŮ' */)
+    const rightBorder: React.CSSProperties = (this.textChoice === 'GALERIE')
       && layoutAndDevice === 'PC' ?
       { borderRight: '0.1vh solid var(--main-black)' } : { borderRight: '0.1vh solid var(--main-yellow)' }
-    console.log(layoutAndDevice)
     return (
       <div>
         {layoutAndDevice === 'TABLET' && <div onClick={this.handleToggleVisibility} id='Tablet-hamburger-button'>
           <Hamburger layoutAndDevice={layoutAndDevice} isMenuDisplayed={isMenuDisplayed} />
         </div>}
         {layoutAndDevice === 'MOBILE' && <div id='Mobile-haburger-bar'>
-          <div onClick={() => this.handleClick(null, 'DOMŮ')} className="Big-logo-mobile"></div>
+          <div onClick={() => this.handleClick(null as unknown as React.MouseEvent<HTMLDivElement>, 'DOMŮ')} className="Big-logo-mobile"></div>
         </div>}
         {layoutAndDevice === 'MOBILE' && <div onClick={this.handleToggleVisibility} className='Mobile-hamburger-container'>
           <Hamburger layoutAndDevice={layoutAndDevice} isMenuDisplayed={isMenuDisplayed} />
@@ -71,7 +79,7 @@ class Menu extends React.Component {
           ...rightBorder,
           animation: !isMenuDisplayed ? 'Slide-menu-left 0.5s ease forwards' : 'Slide-menu-right 0.5s ease forwards'
         }}>
-          <div style={{ cursor: 'pointer' }} onClick={() => this.handleClick(null, 'DOMŮ')} className="Big-logo"></div>
+          <div style={{ cursor: 'pointer' }} onClick={() => this.handleClick(null as unknown as React.MouseEvent<HTMLDivElement>, 'DOMŮ')} className="Big-logo"></div>
           <p className="Shit">
             <span style={{
               color: 'var(--main-yellow)',
@@ -90,10 +98,7 @@ class Menu extends React.Component {
               textAlign: 'center',
               margin: 0,
               letterSpacing: '0.6vh'
-            }}>tekutých a sypkých hmot</span><br></br>
-            <br></br>
-            <br></br>
-            <span>→ </span>  SHIT HAPPENS  <span> ←</span></p>
+            }}>tekutých a sypkých hmot</span></p>
           <nav>
             <div onClick={this.handleClick} className="Home-button">DOMŮ</div>
             <div onClick={this.handleClick} className="Price-button">CENÍK</div>

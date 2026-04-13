@@ -31,6 +31,87 @@
     }
 }
 
+/* TEXT LAYOUT */
+
+.under-Image--text {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 0 !important;
+    height: 58vh !important;
+    width: 100% !important;
+    left: 0 !important;
+    right: 0 !important;
+    padding: 3vh 0 !important;
+    margin: 0 !important;
+    border-radius: 0 !important;
+    box-sizing: border-box !important;
+    grid-template-columns: unset !important;
+    grid-template-rows: unset !important;
+    overflow-y: auto !important;
+}
+
+.under-Image--text .Contact-heading {
+    position: static !important;
+    align-self: unset !important;
+    justify-self: unset !important;
+    grid-row: unset !important;
+    grid-column: unset !important;
+    margin-bottom: 3vh;
+    flex-shrink: 0;
+}
+
+.Price-text-block {
+    max-width: 72vh;
+    width: 88%;
+    display: flex;
+    flex-direction: column;
+    gap: 2.2vh;
+    color: white;
+    text-align: left;
+}
+
+.Price-text-block p {
+    font-size: 1.8vh;
+    line-height: 2.9vh;
+    color: rgba(255,255,255,0.85);
+}
+
+.Price-list {
+    list-style: disc;
+    padding-left: 2.2vh;
+    display: flex;
+    flex-direction: column;
+    gap: 1.8vh;
+}
+
+.Price-list li {
+    font-size: 1.8vh;
+    line-height: 2.9vh;
+    color: var(--main-yellow);
+}
+
+.Price-contact-links {
+    display: flex;
+    gap: 3vh;
+    flex-wrap: wrap;
+    padding-top: 1vh;
+    border-top: 0.1vh solid rgba(207,181,60,0.3);
+}
+
+.Price-contact-links a {
+    color: var(--main-yellow);
+    font-size: 1.9vh;
+    font-weight: bold;
+    text-decoration: none;
+    letter-spacing: 0.05vh;
+}
+
+.Price-contact-links a:hover {
+    opacity: 0.75;
+}
+
 /* POD OBRÁZKEM */
 
 .under-Image {

@@ -4,7 +4,7 @@ function SklizeňVpravo() {
   return (
     <div className="table">
       <table>
-        <tbody style={{color: 'var(--main-yellow)'}}>
+        <tbody style={{ color: 'var(--main-yellow)' }}>
           <tr>
             <td>Minimální denní sazba [Kč]</td>
             <td>3000</td>
@@ -13,7 +13,7 @@ function SklizeňVpravo() {
           <tr>
             <td>Optimální hodinová sazba [Kč]</td>
             <td>1000</td>
-            <td>Započítáno v případě, že souprava bude v provozu minimálně 3 hodiny v kuse, maximálně však 11 hodin. </td>
+            <td>Započítáno v případě, že souprava bude v provozu minimálně 3 hodiny v kuse, maximálně však 11 hodin.</td>
           </tr>
           <tr>
             <td>Maximální denní sazba [Kč]</td>
@@ -22,9 +22,8 @@ function SklizeňVpravo() {
           </tr>
         </tbody>
       </table>
-
     </div>
   )
 }
 
-export default SklizeňVpravo
+export default SklizeňVpravo;
